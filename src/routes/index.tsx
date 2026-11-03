@@ -3,7 +3,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { SITE, IMAGES, openingNotice } from "@/lib/site";
 import santiaga from "@/assets/santiaga-patoy-rmt-photo.png.asset.json";
 import { pageHead } from "@/lib/seo";
-import { Section, SectionTitle, Placeholder, CtaBand, VisitUs, ReviewsSection } from "@/components/site/blocks";
+import { Section, SectionTitle, CtaBand, VisitUs, ReviewsSection } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/")({
   head: () =>
