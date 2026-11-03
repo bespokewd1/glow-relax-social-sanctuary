@@ -10,33 +10,77 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BrowsLashesColdLakeRouteImport } from './routes/brows-lashes-cold-lake'
+import { Route as MassageColdLakeRouteImport } from './routes/massage-cold-lake'
+import { Route as PermanentLipColourColdLakeRouteImport } from './routes/permanent-lip-colour-cold-lake'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BrowsLashesColdLakeRoute = BrowsLashesColdLakeRouteImport.update({
+  id: '/brows-lashes-cold-lake',
+  path: '/brows-lashes-cold-lake',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MassageColdLakeRoute = MassageColdLakeRouteImport.update({
+  id: '/massage-cold-lake',
+  path: '/massage-cold-lake',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PermanentLipColourColdLakeRoute =
+  PermanentLipColourColdLakeRouteImport.update({
+    id: '/permanent-lip-colour-cold-lake',
+    path: '/permanent-lip-colour-cold-lake',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/brows-lashes-cold-lake': typeof BrowsLashesColdLakeRoute
+  '/massage-cold-lake': typeof MassageColdLakeRoute
+  '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/brows-lashes-cold-lake': typeof BrowsLashesColdLakeRoute
+  '/massage-cold-lake': typeof MassageColdLakeRoute
+  '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/brows-lashes-cold-lake': typeof BrowsLashesColdLakeRoute
+  '/massage-cold-lake': typeof MassageColdLakeRoute
+  '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/brows-lashes-cold-lake'
+    | '/massage-cold-lake'
+    | '/permanent-lip-colour-cold-lake'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/brows-lashes-cold-lake'
+    | '/massage-cold-lake'
+    | '/permanent-lip-colour-cold-lake'
+  id:
+    | '__root__'
+    | '/'
+    | '/brows-lashes-cold-lake'
+    | '/massage-cold-lake'
+    | '/permanent-lip-colour-cold-lake'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BrowsLashesColdLakeRoute: typeof BrowsLashesColdLakeRoute
+  MassageColdLakeRoute: typeof MassageColdLakeRoute
+  PermanentLipColourColdLakeRoute: typeof PermanentLipColourColdLakeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +92,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/brows-lashes-cold-lake': {
+      id: '/brows-lashes-cold-lake'
+      path: '/brows-lashes-cold-lake'
+      fullPath: '/brows-lashes-cold-lake'
+      preLoaderRoute: typeof BrowsLashesColdLakeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/massage-cold-lake': {
+      id: '/massage-cold-lake'
+      path: '/massage-cold-lake'
+      fullPath: '/massage-cold-lake'
+      preLoaderRoute: typeof MassageColdLakeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/permanent-lip-colour-cold-lake': {
+      id: '/permanent-lip-colour-cold-lake'
+      path: '/permanent-lip-colour-cold-lake'
+      fullPath: '/permanent-lip-colour-cold-lake'
+      preLoaderRoute: typeof PermanentLipColourColdLakeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrowsLashesColdLakeRoute: BrowsLashesColdLakeRoute,
+  MassageColdLakeRoute: MassageColdLakeRoute,
+  PermanentLipColourColdLakeRoute: PermanentLipColourColdLakeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
