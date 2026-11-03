@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { IMAGES, SITE } from "@/lib/site";
-import santiaga from "@/assets/santiaga-patoy-rmt.png.asset.json";
+import santiaga from "@/assets/santiaga-patoy-rmt-photo.png.asset.json";
 import { pageHead } from "@/lib/seo";
 import { PageHeader, Section, Placeholder, CtaBand } from "@/components/site/blocks";
 
