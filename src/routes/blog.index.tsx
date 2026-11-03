@@ -14,7 +14,8 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndex() {
-  const [first, ...rest] = POSTS;
+  const first = POSTS[0]!;
+  const rest = POSTS.slice(1);
   return (
     <>
       <PageHeader eyebrow="Journal" title="Blog & Wellness Tips" intro="Practical, easy-to-read guides to help you get the most from your massage and beauty appointments." />
