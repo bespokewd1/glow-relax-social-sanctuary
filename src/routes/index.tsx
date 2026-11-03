@@ -3,16 +3,29 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { SITE, IMAGES, openingNotice } from "@/lib/site";
 import santiaga from "@/assets/santiaga-patoy-rmt-photo.png.asset.json";
 import { pageHead } from "@/lib/seo";
+import { BookButton } from "@/components/site/book-button";
 import { Section, SectionTitle, CtaBand, VisitUs, ReviewsSection } from "@/components/site/blocks";
 
+const HERO_SRCSET = [480, 768, 1080, 1400]
+  .map((w) => `${IMAGES.hero.replace(/w=\d+/, `w=${w}`).replace("q=70", "q=60")} ${w}w`)
+  .join(", ");
+
 export const Route = createFileRoute("/")({
-  head: () =>
-    pageHead({
+  head: () => {
+    const h = pageHead({
       path: "/",
       title: "Glow & Relax | Massage & Beauty Studio in Cold Lake, Alberta",
       description: "Massage, brows, lashes and permanent lip colour in a welcoming studio inside Marina Mall, Cold Lake, Alberta. Call 1-825-734-0539 to book.",
       image: IMAGES.hero,
-    }),
+    });
+    return {
+      ...h,
+      links: [
+        ...h.links,
+        { rel: "preload", as: "image", href: IMAGES.hero, imageSrcSet: HERO_SRCSET, imageSizes: "(min-width: 1024px) 50vw, 100vw", fetchPriority: "high" },
+      ],
+    };
+  },
   component: Home,
 });
 
@@ -38,7 +51,7 @@ function Home() {
                 Discover massage, brows, lashes and permanent lip-colour services in a welcoming wellness and beauty studio inside Marina Mall, Cold Lake.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link to="/book" className="btn btn-primary">Book an Appointment</Link>
+                <BookButton>Book an Appointment</BookButton>
                 <a href="#services" className="btn btn-outline">Explore Our Services</a>
               </div>
               <p className="mt-8 flex items-center gap-2 text-sm font-semibold">
@@ -48,7 +61,7 @@ function Home() {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <img src={IMAGES.hero} alt="Massage therapist applying oil during a relaxing back massage" className="h-64 w-full object-cover sm:h-96 lg:h-full" width={1800} height={1200} fetchPriority="high" />
+            <img src={IMAGES.hero} srcSet={HERO_SRCSET} sizes="(min-width: 1024px) 50vw, 100vw" alt="Massage therapist applying oil during a relaxing back massage" className="h-64 w-full object-cover sm:h-96 lg:h-full" width={1800} height={1200} fetchPriority="high" />
           </div>
         </div>
       </section>

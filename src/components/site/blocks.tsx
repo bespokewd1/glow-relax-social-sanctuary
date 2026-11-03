@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { MapPin, Clock, Phone, Star, Facebook } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { BookButton } from "./book-button";
 import { SITE, directionsUrl, mapEmbedUrl } from "@/lib/site";
 
 export function PageHeader({ eyebrow, title, intro, image, imageAlt }: { eyebrow: string; title: string; intro?: ReactNode; image?: string; imageAlt?: string }) {
@@ -51,7 +52,7 @@ export function Placeholder({ children }: { children: ReactNode }) {
 export function CallBookButtons({ light }: { light?: boolean }) {
   return (
     <div className="flex flex-col gap-3 sm:flex-row">
-      <Link to="/book" className={`btn ${light ? "btn-light" : "btn-primary"}`}>Book Appointment</Link>
+      <BookButton className={`btn ${light ? "btn-light" : "btn-primary"}`} />
       <a href={SITE.phoneHref} className="btn btn-outline">
         <Phone className="h-4 w-4" aria-hidden /> Call {SITE.phoneDisplay}
       </a>
