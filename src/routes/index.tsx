@@ -61,7 +61,7 @@ function Home() {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <img src={IMAGES.hero} srcSet={HERO_SRCSET} sizes="(min-width: 1024px) 50vw, 100vw" alt="Massage therapist applying oil during a relaxing back massage" className="h-64 w-full object-cover sm:h-96 lg:h-full" width={1800} height={1200} fetchPriority="high" decoding="async" />
+            <img src={IMAGES.hero} srcSet={HERO_SRCSET} sizes="(min-width: 1024px) 50vw, 100vw" alt="Massage therapist applying oil during a relaxing back massage" className="h-64 w-full object-cover sm:h-96 lg:h-full" width={1800} height={1200} fetchPriority="high" />
           </div>
         </div>
       </section>
