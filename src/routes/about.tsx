@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { IMAGES } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
-import { PageHeader, Section, Placeholder, CtaBand, StockNote } from "@/components/site/blocks";
+import { PageHeader, Section, Placeholder, CtaBand } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -42,7 +42,6 @@ function About() {
       </Section>
       <Section className="bg-card">
         <img src={IMAGES.candle} alt="Spa towel, lotion and tulips" loading="lazy" className="aspect-[21/9] w-full rounded-md object-cover" width={1600} height={700} />
-        <StockNote />
       </Section>
       <CtaBand />
     </>

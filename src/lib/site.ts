@@ -10,7 +10,8 @@ export const SITE = {
   email: null as string | null, // add when confirmed
   address: {
     venue: "Marina Mall Shopping Mall",
-    street: "Unit #7, 901 10 Street",
+    street: "#7 901 10 St.",
+    note: "Inside the mall",
     city: "Cold Lake",
     region: "AB",
     regionFull: "Alberta",
@@ -19,7 +20,7 @@ export const SITE = {
   },
   hours: [{ days: "Monday–Friday", time: "9:00 AM–4:30 PM" }],
   hoursSchema: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "16:30" },
-  mapQuery: "Marina Mall, 901 10 Street, Cold Lake, AB T9M 1H8",
+  mapQuery: "Marina Mall Shopping Mall, #7 901 10 St., Cold Lake, AB T9M 1H8",
   social: {
     facebook: "https://www.facebook.com/glowandrelaxrmt",
     instagram: null as string | null,
@@ -28,6 +29,7 @@ export const SITE = {
   googleReviewUrl: null as string | null,
   /** Booking provider (Calendly / Jane). null = pending, site shows "Call to Book". */
   bookingUrl: null as string | null,
+  therapist: { name: "Santiaga Patoy", title: "Registered Massage Therapist (RMT)" },
   referral: {
     friendReward: 20,
     referrerReward: 20,
@@ -85,13 +87,13 @@ export const IMAGES = {
 };
 
 export const MASSAGE_SERVICES: MassageService[] = [
-  { slug: "deep-tissue", name: "Deep Tissue Massage", description: "More focused massage techniques using firmer pressure when appropriate.", durations: [], image: IMAGES.deepTissue },
-  { slug: "relaxation", name: "Relaxation Massage", description: "Gentle massage designed for comfort and relaxation.", durations: [], image: IMAGES.massage },
-  { slug: "swedish", name: "Swedish Massage", description: "Traditional massage featuring flowing massage strokes.", durations: [], image: IMAGES.oil },
-  { slug: "prenatal", name: "Prenatal Massage", description: "Massage tailored to pregnancy, subject to suitability and therapist qualifications.", durations: [], image: IMAGES.towels },
-  { slug: "baby", name: "Baby Massage", description: "Specialized infant massage service — exact format and eligibility to be confirmed.", durations: [], image: IMAGES.stillLife },
-  { slug: "hot-stone", name: "Hot Stone Massage", description: "Massage incorporating warmed stones.", durations: [], image: IMAGES.hotStone },
-  { slug: "cupping", name: "Cupping Massage", description: "Treatment incorporating cupping techniques.", durations: [], image: IMAGES.candle },
+  { slug: "deep-tissue", name: "Deep Tissue Massage", description: "More focused massage techniques using firmer pressure when appropriate.", durations: [45, 60, 90, 120], image: IMAGES.deepTissue },
+  { slug: "relaxation", name: "Relaxation Massage", description: "Gentle massage designed for comfort and relaxation.", durations: [45, 60, 90, 120], image: IMAGES.massage },
+  { slug: "swedish", name: "Swedish Massage", description: "Traditional massage featuring flowing massage strokes.", durations: [45, 60, 90, 120], image: IMAGES.oil },
+  { slug: "prenatal", name: "Prenatal Massage", description: "Massage tailored to pregnancy, subject to suitability and therapist qualifications.", durations: [45, 60, 90, 120], image: IMAGES.towels },
+  { slug: "baby", name: "Baby Massage", description: "Specialized infant massage service — exact format and eligibility to be confirmed.", durations: [45, 60, 90, 120], image: IMAGES.stillLife },
+  { slug: "hot-stone", name: "Hot Stone Massage", description: "Massage incorporating warmed stones.", durations: [45, 60, 90, 120], image: IMAGES.hotStone },
+  { slug: "cupping", name: "Cupping Massage", description: "Treatment incorporating cupping techniques.", durations: [45, 60, 90, 120], image: IMAGES.candle },
 ];
 
 export const PRICING_LABEL = "Contact us for pricing";
