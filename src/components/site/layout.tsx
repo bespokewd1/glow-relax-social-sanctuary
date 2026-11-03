@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, Phone, X, Facebook, CalendarDays } from "lucide-react";
 import logo from "@/assets/glow-and-relax-logo.png.asset.json";
 import { SITE, openingNotice } from "@/lib/site";
+import { BookButton } from "./book-button";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -21,9 +22,9 @@ export function SiteHeader() {
       {notice && (
         <div className="bg-ink py-2 text-center text-xs tracking-wide text-ink-foreground">{notice}</div>
       )}
-      <div className="container-site flex h-20 items-center justify-between gap-4">
+      <div className="container-site flex h-24 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3" aria-label="Glow & Relax home">
-          <img src={logo.url} alt="Glow and Relax logo" width={56} height={56} className="h-14 w-14 rounded-full object-cover" />
+          <img src={logo.url} alt="Glow and Relax logo" width={80} height={80} className="h-[4.5rem] w-[4.5rem] rounded-full object-cover md:h-20 md:w-20" />
           <span className="hidden font-display text-xl leading-none sm:block">
             Glow &amp; Relax
             <span className="mt-1 block font-sans text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">Cold Lake, Alberta</span>
@@ -49,9 +50,7 @@ export function SiteHeader() {
           <a href={SITE.phoneHref} className="hidden items-center gap-2 text-sm font-semibold md:flex">
             <Phone className="h-4 w-4 text-blush" aria-hidden /> {SITE.phoneDisplay}
           </a>
-          <Link to="/book" className="btn btn-primary hidden !min-h-11 !px-4 sm:inline-flex">
-            Book Appointment
-          </Link>
+          <BookButton className="btn btn-primary hidden !min-h-11 !px-4 sm:inline-flex" />
           <button
             className="inline-flex h-11 w-11 items-center justify-center lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -73,7 +72,7 @@ export function SiteHeader() {
               </li>
             ))}
             <li className="pt-4">
-              <Link to="/book" onClick={() => setOpen(false)} className="btn btn-primary w-full">Book Appointment</Link>
+              <BookButton className="btn btn-primary w-full" />
             </li>
           </ul>
         </nav>
@@ -88,9 +87,9 @@ export function MobileActionBar() {
       <a href={SITE.phoneHref} className="flex min-h-14 items-center justify-center gap-2 text-sm font-bold uppercase tracking-wider">
         <Phone className="h-4 w-4" aria-hidden /> Call Now
       </a>
-      <Link to="/book" className="flex min-h-14 items-center justify-center gap-2 bg-primary text-sm font-bold uppercase tracking-wider text-primary-foreground">
+      <BookButton className="flex min-h-14 items-center justify-center gap-2 bg-primary px-2 text-center text-xs font-bold uppercase tracking-wider text-primary-foreground">
         <CalendarDays className="h-4 w-4" aria-hidden /> Book
-      </Link>
+      </BookButton>
     </div>
   );
 }
