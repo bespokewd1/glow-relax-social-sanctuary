@@ -6,24 +6,28 @@ import { pageHead } from "@/lib/seo";
 import { BookButton } from "@/components/site/book-button";
 import { Section, SectionTitle, CtaBand, VisitUs, ReviewsSection } from "@/components/site/blocks";
 
+const HERO_SRCSET = [480, 768, 1080, 1400]
+  .map((w) => `${IMAGES.hero.replace(/w=\d+/, `w=${w}`).replace("q=70", "q=60")} ${w}w`)
+  .join(", ");
+
 export const Route = createFileRoute("/")({
-  head: () =>
-    pageHead({
+  head: () => {
+    const h = pageHead({
       path: "/",
       title: "Glow & Relax | Massage & Beauty Studio in Cold Lake, Alberta",
       description: "Massage, brows, lashes and permanent lip colour in a welcoming studio inside Marina Mall, Cold Lake, Alberta. Call 1-825-734-0539 to book.",
       image: IMAGES.hero,
-    }),
-    links: [
-      { rel: "canonical", href: "https://glowandrelax.ca/" },
-      { rel: "preload", as: "image", href: IMAGES.hero, imageSrcSet: HERO_SRCSET_EARLY(), imageSizes: "(min-width: 1024px) 50vw, 100vw", fetchPriority: "high" },
-    ],
+    });
+    return {
+      ...h,
+      links: [
+        ...h.links,
+        { rel: "preload", as: "image", href: IMAGES.hero, imageSrcSet: HERO_SRCSET, imageSizes: "(min-width: 1024px) 50vw, 100vw", fetchPriority: "high" },
+      ],
+    };
+  },
   component: Home,
 });
-
-const HERO_SRCSET = [480, 768, 1080, 1400]
-  .map((w) => `${IMAGES.hero.replace(/w=\d+/, `w=${w}`).replace("q=70", "q=60")} ${w}w`)
-  .join(", ");
 
 const POPULAR = [
   { name: "Relaxation Massage", text: "Gentle, unhurried massage designed around comfort.", to: "/massage-cold-lake" },
