@@ -10,7 +10,7 @@ export interface Post {
   imageAlt: string;
   /** Drafts are visible but marked; set to false after owner review. */
   draft: boolean;
-  related: { to: string; label: string };
+  related: { to: "/" | "/massage-cold-lake" | "/brows-lashes-cold-lake" | "/permanent-lip-colour-cold-lake"; label: string };
   /** Simple HTML body — h2/h3/p/ul only. */
   body: string;
 }

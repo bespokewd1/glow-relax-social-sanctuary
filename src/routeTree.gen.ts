@@ -10,18 +10,46 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as BookingPolicyRouteImport } from './routes/booking-policy'
 import { Route as BrowsLashesColdLakeRouteImport } from './routes/brows-lashes-cold-lake'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as MassageColdLakeRouteImport } from './routes/massage-cold-lake'
 import { Route as PermanentLipColourColdLakeRouteImport } from './routes/permanent-lip-colour-cold-lake'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ReferralProgramRouteImport } from './routes/referral-program'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookingPolicyRoute = BookingPolicyRouteImport.update({
+  id: '/booking-policy',
+  path: '/booking-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BrowsLashesColdLakeRoute = BrowsLashesColdLakeRouteImport.update({
   id: '/brows-lashes-cold-lake',
   path: '/brows-lashes-cold-lake',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MassageColdLakeRoute = MassageColdLakeRouteImport.update({
@@ -35,52 +63,128 @@ const PermanentLipColourColdLakeRoute =
     path: '/permanent-lip-colour-cold-lake',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferralProgramRoute = ReferralProgramRouteImport.update({
+  id: '/referral-program',
+  path: '/referral-program',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/booking-policy': typeof BookingPolicyRoute
   '/brows-lashes-cold-lake': typeof BrowsLashesColdLakeRoute
+  '/contact': typeof ContactRoute
   '/massage-cold-lake': typeof MassageColdLakeRoute
   '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/referral-program': typeof ReferralProgramRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/booking-policy': typeof BookingPolicyRoute
   '/brows-lashes-cold-lake': typeof BrowsLashesColdLakeRoute
+  '/contact': typeof ContactRoute
   '/massage-cold-lake': typeof MassageColdLakeRoute
   '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/referral-program': typeof ReferralProgramRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/booking-policy': typeof BookingPolicyRoute
   '/brows-lashes-cold-lake': typeof BrowsLashesColdLakeRoute
+  '/contact': typeof ContactRoute
   '/massage-cold-lake': typeof MassageColdLakeRoute
   '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/referral-program': typeof ReferralProgramRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/book'
+    | '/booking-policy'
     | '/brows-lashes-cold-lake'
+    | '/contact'
     | '/massage-cold-lake'
     | '/permanent-lip-colour-cold-lake'
+    | '/privacy-policy'
+    | '/referral-program'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/book'
+    | '/booking-policy'
     | '/brows-lashes-cold-lake'
+    | '/contact'
     | '/massage-cold-lake'
     | '/permanent-lip-colour-cold-lake'
+    | '/privacy-policy'
+    | '/referral-program'
+    | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/book'
+    | '/booking-policy'
     | '/brows-lashes-cold-lake'
+    | '/contact'
     | '/massage-cold-lake'
     | '/permanent-lip-colour-cold-lake'
+    | '/privacy-policy'
+    | '/referral-program'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BookRoute: typeof BookRoute
+  BookingPolicyRoute: typeof BookingPolicyRoute
   BrowsLashesColdLakeRoute: typeof BrowsLashesColdLakeRoute
+  ContactRoute: typeof ContactRoute
   MassageColdLakeRoute: typeof MassageColdLakeRoute
   PermanentLipColourColdLakeRoute: typeof PermanentLipColourColdLakeRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ReferralProgramRoute: typeof ReferralProgramRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -92,11 +196,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/booking-policy': {
+      id: '/booking-policy'
+      path: '/booking-policy'
+      fullPath: '/booking-policy'
+      preLoaderRoute: typeof BookingPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/brows-lashes-cold-lake': {
       id: '/brows-lashes-cold-lake'
       path: '/brows-lashes-cold-lake'
       fullPath: '/brows-lashes-cold-lake'
       preLoaderRoute: typeof BrowsLashesColdLakeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/massage-cold-lake': {
@@ -113,14 +245,50 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PermanentLipColourColdLakeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/referral-program': {
+      id: '/referral-program'
+      path: '/referral-program'
+      fullPath: '/referral-program'
+      preLoaderRoute: typeof ReferralProgramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BookRoute: BookRoute,
+  BookingPolicyRoute: BookingPolicyRoute,
   BrowsLashesColdLakeRoute: BrowsLashesColdLakeRoute,
+  ContactRoute: ContactRoute,
   MassageColdLakeRoute: MassageColdLakeRoute,
   PermanentLipColourColdLakeRoute: PermanentLipColourColdLakeRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ReferralProgramRoute: ReferralProgramRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
