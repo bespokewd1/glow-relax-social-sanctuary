@@ -13,7 +13,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader, SiteFooter, MobileActionBar } from "@/components/site/layout";
-import { SITE } from "@/lib/site";
+import { SITE, MASSAGE_SERVICES } from "@/lib/site";
+import logo from "@/assets/glow-and-relax-logo.png.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -54,13 +55,29 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 
 const localBusiness = {
   "@context": "https://schema.org",
-  "@type": "DaySpa",
+  "@type": ["DaySpa", "HealthAndBeautyBusiness"],
+  "@id": `${SITE.url}/#business`,
   name: SITE.name,
+  description: SITE.tagline,
   url: SITE.url,
+  logo: `${SITE.url}${logo.url}`,
+  image: `${SITE.url}${logo.url}`,
+  hasMap: `https://www.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}`,
+  areaServed: ["Cold Lake", "4 Wing Cold Lake", "Bonnyville", "Lakeland County"].map((name) => ({ "@type": "City", name })),
+  employee: { "@type": "Person", name: SITE.therapist.name, jobTitle: SITE.therapist.title },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Massage & Beauty Services",
+    itemListElement: [
+      ...MASSAGE_SERVICES.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.name, url: `${SITE.url}/massage-cold-lake#${s.slug}` } })),
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brows & Lashes", url: `${SITE.url}/brows-lashes-cold-lake` } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Permanent Lip Colour", url: `${SITE.url}/permanent-lip-colour-cold-lake` } },
+    ],
+  },
   telephone: "+1-825-734-0539",
   address: {
     "@type": "PostalAddress",
-    streetAddress: `901 10 Street, Unit #7 (Marina Mall)`,
+    streetAddress: "#7 901 10 St. (Marina Mall Shopping Mall)",
     addressLocality: SITE.address.city,
     addressRegion: SITE.address.region,
     postalCode: SITE.address.postal,
@@ -71,6 +88,8 @@ const localBusiness = {
   ],
   sameAs: [SITE.social.facebook, SITE.social.instagram].filter(Boolean),
 };
+
+const website = { "@context": "https://schema.org", "@type": "WebSite", name: SITE.name, url: SITE.url, publisher: { "@id": `${SITE.url}/#business` } };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -92,7 +111,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://images.unsplash.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Mulish:wght@400;600;700&display=swap" },
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(localBusiness) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(localBusiness) },
+      { type: "application/ld+json", children: JSON.stringify(website) },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

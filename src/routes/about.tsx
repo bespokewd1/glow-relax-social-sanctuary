@@ -1,14 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { IMAGES } from "@/lib/site";
+import { IMAGES, SITE } from "@/lib/site";
+import santiaga from "@/assets/santiaga-patoy-rmt.png.asset.json";
 import { pageHead } from "@/lib/seo";
-import { PageHeader, Section, Placeholder, CtaBand, StockNote } from "@/components/site/blocks";
+import { PageHeader, Section, Placeholder, CtaBand } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/about")({
   head: () =>
     pageHead({
       path: "/about",
-      title: "About Glow & Relax | Massage & Beauty Studio in Cold Lake",
-      description: "Meet Glow & Relax, a new massage and beauty studio inside Marina Mall in Cold Lake, Alberta, focused on comfort and personal care.",
+      title: "About Glow & Relax | Santiaga Patoy, RMT in Cold Lake",
+      description: "Meet Santiaga Patoy, RMT, and Glow & Relax, a new massage and beauty studio inside Marina Mall in Cold Lake, Alberta, focused on comfort and personal care.",
     }),
   component: About,
 });
@@ -36,13 +37,19 @@ function About() {
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl">Meet Your Therapist</h2>
-            <div className="mt-6"><Placeholder>Owner/therapist name, photo, qualifications, biography and specialties will be added once confirmed.</Placeholder></div>
+            <figure className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-center">
+              <img src={santiaga.url} alt={`${SITE.therapist.name}, RMT at Glow & Relax in Cold Lake`} width={240} height={240} loading="lazy" className="h-48 w-48 shrink-0 rounded-full object-cover" />
+              <figcaption>
+                <p className="font-display text-2xl">{SITE.therapist.name}, RMT</p>
+                <p className="text-sm text-muted-foreground">{SITE.therapist.title}</p>
+              </figcaption>
+            </figure>
+            <div className="mt-6"><Placeholder>Santiaga's biography, qualifications and specialties will be added once confirmed.</Placeholder></div>
           </div>
         </div>
       </Section>
       <Section className="bg-card">
         <img src={IMAGES.candle} alt="Spa towel, lotion and tulips" loading="lazy" className="aspect-[21/9] w-full rounded-md object-cover" width={1600} height={700} />
-        <StockNote />
       </Section>
       <CtaBand />
     </>

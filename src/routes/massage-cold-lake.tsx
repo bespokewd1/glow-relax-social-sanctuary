@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MASSAGE_SERVICES, IMAGES, PRICING_LABEL, SITE, isOpen, OPENINGS } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
-import { PageHeader, Section, SectionTitle, CallBookButtons, Faq, CtaBand, StockNote } from "@/components/site/blocks";
+import { PageHeader, Section, SectionTitle, CallBookButtons, Faq, CtaBand } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/massage-cold-lake")({
   head: () =>
@@ -50,7 +50,6 @@ function MassagePage() {
             </article>
           ))}
         </div>
-        <StockNote />
         <div className="mt-12 border-t pt-10"><CallBookButtons /></div>
       </Section>
       <Section className="bg-card">
@@ -62,7 +61,7 @@ function MassagePage() {
               { q: "What happens during my first appointment?", a: "We'll start with a short conversation about your preferences, comfort and any areas to focus on or avoid. You'll have privacy to get comfortable, and you can ask to adjust pressure at any time." },
               { q: "How long are appointments?", a: "Appointments are offered in 45, 60, 90 and 120 minute lengths, depending on the treatment. We'll confirm availability when you book." },
               { q: "Do you offer prenatal massage?", a: "Prenatal massage is listed as a service, subject to suitability and therapist qualifications. Please call to discuss before booking." },
-              { q: "Where is Glow & Relax located?", a: `Inside Marina Mall, ${SITE.address.street}, ${SITE.address.city}, ${SITE.address.region} ${SITE.address.postal}.` },
+              { q: "Where is Glow & Relax located?", a: `Inside Marina Mall Shopping Mall, ${SITE.address.street}, ${SITE.address.city}, ${SITE.address.region} ${SITE.address.postal}.` },
               { q: "How do I book?", a: <>Call <a className="underline" href={SITE.phoneHref}>{SITE.phoneDisplay}</a>. Online booking is coming soon. Massage appointments are available from {new Date(OPENINGS.massage + "T12:00:00").toLocaleDateString("en-CA", { month: "long", day: "numeric", year: "numeric" })}.</> },
             ]}
           />

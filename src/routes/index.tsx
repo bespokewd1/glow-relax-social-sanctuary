@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
 import { SITE, IMAGES, openingNotice } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
-import { Section, SectionTitle, Placeholder, CtaBand, VisitUs, ReviewsSection, StockNote } from "@/components/site/blocks";
+import { Section, SectionTitle, Placeholder, CtaBand, VisitUs, ReviewsSection } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -72,7 +72,6 @@ function Home() {
             </article>
           ))}
         </div>
-        <StockNote />
       </Section>
 
       {/* Why */}

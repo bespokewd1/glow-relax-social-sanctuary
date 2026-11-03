@@ -39,10 +39,6 @@ export function SectionTitle({ eyebrow, title, children, center }: { eyebrow?: s
   );
 }
 
-export function StockNote() {
-  return <p className="mt-2 text-xs text-muted-foreground">Representative stock photography.</p>;
-}
-
 export function Placeholder({ children }: { children: ReactNode }) {
   return (
     <div className="rounded-md border border-dashed border-taupe bg-card p-5 text-sm text-muted-foreground">
@@ -100,7 +96,7 @@ export function VisitUs({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
         <dl className="mt-8 space-y-6">
           <div className="flex gap-4">
             <MapPin className="mt-1 h-5 w-5 shrink-0 text-blush" aria-hidden />
-            <div><dt className="sr-only">Address</dt><dd><address className="not-italic">{a.venue}<br />{a.street}<br />{a.city}, {a.regionFull} {a.postal}</address></dd></div>
+            <div><dt className="sr-only">Address</dt><dd><address className="not-italic">{a.venue}<br />{a.street}<br />{a.city} {a.region} {a.postal}<br /><span className="text-muted-foreground">{a.note}</span></address></dd></div>
           </div>
           <div className="flex gap-4">
             <Clock className="mt-1 h-5 w-5 shrink-0 text-blush" aria-hidden />
