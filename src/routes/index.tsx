@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
 import { SITE, IMAGES, openingNotice } from "@/lib/site";
+import santiaga from "@/assets/santiaga-patoy-rmt-photo.png.asset.json";
 import { pageHead } from "@/lib/seo";
 import { Section, SectionTitle, Placeholder, CtaBand, VisitUs, ReviewsSection } from "@/components/site/blocks";
 
@@ -120,16 +121,20 @@ function Home() {
       {/* Meet */}
       <Section className="bg-secondary/40">
         <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr]">
-          <div className="flex aspect-[4/5] items-center justify-center rounded-md border border-dashed border-taupe bg-card text-center text-sm text-muted-foreground">
-            Professional photo<br />coming soon
-          </div>
+          <img
+            src={santiaga.url}
+            alt={`${SITE.therapist.name}, Registered Massage Therapist at Glow & Relax in Cold Lake`}
+            width={1200}
+            height={1224}
+            loading="lazy"
+            className="aspect-[4/5] w-full rounded-md object-cover object-top"
+          />
           <div>
             <p className="eyebrow">Meet your therapist</p>
             <h2 className="mt-3 text-3xl md:text-4xl">The Hands Behind Glow &amp; Relax</h2>
-            <div className="mt-6">
-              <Placeholder>Name, qualifications, biography and specialties will be added here once confirmed by the owner.</Placeholder>
-            </div>
-            <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">About the studio <ArrowRight className="h-4 w-4" aria-hidden /></Link>
+            <p className="mt-6 font-display text-2xl">{SITE.therapist.name}, RMT</p>
+            <p className="text-sm text-muted-foreground">{SITE.therapist.title}</p>
+            <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">More about the studio <ArrowRight className="h-4 w-4" aria-hidden /></Link>
           </div>
         </div>
       </Section>
