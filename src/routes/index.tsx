@@ -146,8 +146,12 @@ function Home() {
             <p className="eyebrow">Meet your therapist</p>
             <h2 className="mt-3 text-3xl md:text-4xl">The Hands Behind Glow &amp; Relax</h2>
             <p className="mt-6 font-display text-2xl">{SITE.therapist.name}, RMT</p>
-            <p className="text-sm text-muted-foreground">{SITE.therapist.title}</p>
-            <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">More about the studio <ArrowRight className="h-4 w-4" aria-hidden /></Link>
+            <p className="text-sm text-muted-foreground">{SITE.therapist.role} • {SITE.therapist.title}</p>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              “I'm passionate about helping people feel their best through personalized massage therapy — whether you're
+              dealing with muscle tension, everyday stress, or simply need time to unwind.”
+            </p>
+            <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">More about me <ArrowRight className="h-4 w-4" aria-hidden /></Link>
           </div>
         </div>
       </Section>
