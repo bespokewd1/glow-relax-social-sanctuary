@@ -22,3 +22,10 @@ import { MASSAGE_SERVICES as _MS } from "@/lib/site";
 test("every massage offers 45, 60, 90 and 120 minutes", () => {
   for (const s of _MS) expect(s.durations).toEqual([45, 60, 90, 120]);
 });
+
+test("therapist is Santiaga Mullen-Patoy, RMT and owner", () => {
+  expect(SITE.therapist.name).toBe("Santiaga Mullen-Patoy");
+  expect(SITE.therapist.role).toBe("Owner");
+  expect(SITE.therapist.title).toContain("Registered Massage Therapist");
+  expect(SITE.therapist.mission).toContain("personalized massage therapy");
+});

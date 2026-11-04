@@ -29,7 +29,13 @@ export const SITE = {
   googleReviewUrl: null as string | null,
   /** Booking provider (Calendly / Jane). null = pending, site shows "Call to Book". */
   bookingUrl: null as string | null,
-  therapist: { name: "Santiaga Patoy", title: "Registered Massage Therapist (RMT)" },
+  therapist: {
+    name: "Santiaga Mullen-Patoy",
+    title: "Registered Massage Therapist (RMT)",
+    role: "Owner",
+    mission:
+      "To provide compassionate, professional, and personalized massage therapy that promotes relaxation, supports recovery, and enhances overall well-being.",
+  },
   referral: {
     friendReward: 20,
     referrerReward: 20,
