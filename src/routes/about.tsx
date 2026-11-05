@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <>
-      <Section className="pt-10 md:pt-16">
+      <Section className="pt-8 md:pt-12">
         <div className="grid gap-12 md:grid-cols-[0.75fr_1.25fr] md:items-start">
           <figure>
             <img
@@ -51,9 +51,7 @@ function About() {
                 valued, and respected.
               </p>
             </div>
-            <p className="mt-8 font-display text-3xl text-primary">{"\n"}</p>
-
-            <div className="mt-10 border-t border-taupe pt-8">
+            <div className="mt-8 border-t border-taupe pt-8">
               <h3 className="text-2xl">My Mission</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">{SITE.therapist.mission}</p>
             </div>
