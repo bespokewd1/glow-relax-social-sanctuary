@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { IMAGES, SITE } from "@/lib/site";
 import santiaga from "@/assets/santiaga-patoy-rmt-photo.png.asset.json";
 import { pageHead } from "@/lib/seo";
-import { PageHeader, Section, CtaBand } from "@/components/site/blocks";
+import { Section, CtaBand } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -18,15 +18,7 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <>
-      <PageHeader
-        eyebrow="About me"
-        title=""
-        image={IMAGES.stillLife}
-        imageAlt="Massage oil and eucalyptus on linen"
-        intro=""
-      />
-
-      <Section>
+      <Section className="pt-10 md:pt-16">
         <div className="grid gap-12 md:grid-cols-[0.75fr_1.25fr] md:items-start">
           <figure>
             <img
@@ -44,7 +36,7 @@ function About() {
           </figure>
 
           <div>
-            <h2 className="text-3xl md:text-4xl">About Me</h2>
+            <h1 className="text-4xl md:text-5xl">About Me</h1>
             <div className="mt-5 space-y-5 text-lg leading-relaxed text-muted-foreground">
               <p>
                 Hi, I'm {SITE.therapist.name}, the owner of Glow &amp; Relax in Cold Lake, Alberta.
