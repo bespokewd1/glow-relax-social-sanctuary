@@ -20,10 +20,10 @@ function About() {
     <>
       <PageHeader
         eyebrow="About me"
-        title="Hi, I'm Santiaga"
+        title=""
         image={IMAGES.stillLife}
         imageAlt="Massage oil and eucalyptus on linen"
-        intro="Owner and Registered Massage Therapist at Glow & Relax in Cold Lake, Alberta — a peaceful, welcoming space where every client feels comfortable, valued and respected."
+        intro=""
       />
 
       <Section>
