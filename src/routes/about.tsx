@@ -51,7 +51,7 @@ function About() {
                 valued, and respected.
               </p>
             </div>
-            <p className="mt-8 font-display text-3xl text-primary">— Santiaga</p>
+            <p className="mt-8 font-display text-3xl text-primary">{"\n"}</p>
 
             <div className="mt-10 border-t border-taupe pt-8">
               <h3 className="text-2xl">My Mission</h3>
