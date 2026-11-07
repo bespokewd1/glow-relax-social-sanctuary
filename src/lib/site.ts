@@ -54,10 +54,8 @@ export function isOpen(kind: keyof typeof OPENINGS, now: Date = new Date()) {
 
 /** Returns the pre-launch notice, or null once both services have opened. */
 export function openingNotice(now: Date = new Date()): string | null {
-  const parts: string[] = [];
-  if (!isOpen("beauty", now)) parts.push("Beauty services from November 15");
-  if (!isOpen("massage", now)) parts.push("Massage services from December 1");
-  return parts.length ? parts.join(" • ") : null;
+  if (!isOpen("beauty", now) || !isOpen("massage", now)) return "All Services start December 1st, 2026";
+  return null;
 }
 
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.mapQuery)}`;
