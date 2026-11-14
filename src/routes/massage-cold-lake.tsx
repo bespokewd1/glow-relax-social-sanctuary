@@ -34,7 +34,7 @@ function MassagePage() {
       />
       <Section>
         <SectionTitle eyebrow="Treatments" title="Our Massage Options">
-          Appointments are offered in {ALL_DURATIONS.join(", ")} minute lengths. Not every treatment is available in every length — we'll confirm what's right for you when you book.
+          Appointments are offered in {ALL_DURATIONS.join(", ")} minute lengths. Baby massage is a 30-minute session and prenatal massage is 60 minutes. We'll confirm what's right for you when you book.
         </SectionTitle>
         <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {MASSAGE_SERVICES.map((s) => (
@@ -59,7 +59,7 @@ function MassagePage() {
             items={[
               { q: "Which massage should I choose?", a: <>If you want to unwind, a relaxation or Swedish massage is a good starting point. If you prefer firmer, more focused pressure, ask about deep tissue. Not sure? <a className="underline" href={SITE.phoneHref}>Call us</a> and we'll talk it through. You can also read <Link className="underline" to="/blog/$slug" params={{ slug: "swedish-vs-deep-tissue-massage" }}>Swedish vs. deep tissue</Link>.</> },
               { q: "What happens during my first appointment?", a: "We'll start with a short conversation about your preferences, comfort and any areas to focus on or avoid. You'll have privacy to get comfortable, and you can ask to adjust pressure at any time." },
-              { q: "How long are appointments?", a: "Appointments are offered in 45, 60, 90 and 120 minute lengths, depending on the treatment. We'll confirm availability when you book." },
+              { q: "How long are appointments?", a: "Most treatments are offered in 45, 60, 90 and 120 minute lengths. Baby massage is 30 minutes and prenatal massage is 60 minutes. We'll confirm availability when you book." },
               { q: "Do you offer prenatal massage?", a: "Prenatal massage is listed as a service, subject to suitability and therapist qualifications. Please call to discuss before booking." },
               { q: "Where is Glow & Relax located?", a: `Inside Marina Mall Shopping Mall, ${SITE.address.street}, ${SITE.address.city}, ${SITE.address.region} ${SITE.address.postal}.` },
               { q: "How do I book?", a: <>Call <a className="underline" href={SITE.phoneHref}>{SITE.phoneDisplay}</a>. Online booking is coming soon. Massage appointments are available from {new Date(OPENINGS.massage + "T12:00:00").toLocaleDateString("en-CA", { month: "long", day: "numeric", year: "numeric" })}.</> },
