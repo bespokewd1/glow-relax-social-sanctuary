@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MASSAGE_SERVICES, IMAGES, PRICING_LABEL, SITE, isOpen, OPENINGS } from "@/lib/site";
+import { MASSAGE_SERVICES, IMAGES, PRICING_LABEL, SITE, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { PageHeader, Section, SectionTitle, CallBookButtons, Faq, CtaBand } from "@/components/site/blocks";
 
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/massage-cold-lake")({
     pageHead({
       path: "/massage-cold-lake",
       title: "Massage Services in Cold Lake, AB | Glow & Relax",
-      description: "Relaxation, deep tissue, Swedish, prenatal, hot stone and cupping massage inside Marina Mall, Cold Lake. Massage services begin December 1, 2026.",
+      description: `Relaxation, deep tissue, Swedish, prenatal, hot stone and cupping massage inside Marina Mall, Cold Lake. Massage services begin ${OPENING_DATE_LABEL}.`,
       image: IMAGES.massage,
     }),
   component: MassagePage,
@@ -28,7 +28,7 @@ function MassagePage() {
         intro={
           <>
             <p>Explore massage options at Glow &amp; Relax, located inside Marina Mall in Cold Lake. Choose from a range of treatments designed around comfort, relaxation and individual preferences.</p>
-            {!open && <p className="mt-4 text-base font-semibold text-foreground">Massage services begin December 1, 2026.</p>}
+            {!open && <p className="mt-4 text-base font-semibold text-foreground">Massage services begin {OPENING_DATE_LABEL}.</p>}
           </>
         }
       />
@@ -62,7 +62,7 @@ function MassagePage() {
               { q: "How long are appointments?", a: "Most treatments are offered in 45, 60, 90 and 120 minute lengths. Baby massage is 30 minutes and prenatal massage is 60 minutes. We'll confirm availability when you book." },
               { q: "Do you offer prenatal massage?", a: "Prenatal massage is listed as a service, subject to suitability and therapist qualifications. Please call to discuss before booking." },
               { q: "Where is Glow & Relax located?", a: `Inside Marina Mall Shopping Mall, ${SITE.address.street}, ${SITE.address.city}, ${SITE.address.region} ${SITE.address.postal}.` },
-              { q: "How do I book?", a: <>Call <a className="underline" href={SITE.phoneHref}>{SITE.phoneDisplay}</a>. Online booking is coming soon. Massage appointments are available from {new Date(OPENINGS.massage + "T12:00:00").toLocaleDateString("en-CA", { month: "long", day: "numeric", year: "numeric" })}.</> },
+              { q: "How do I book?", a: <>Call <a className="underline" href={SITE.phoneHref}>{SITE.phoneDisplay}</a>. Online booking is coming soon. Massage appointments are available from {OPENING_DATE_LABEL}.</> },
             ]}
           />
         </div>

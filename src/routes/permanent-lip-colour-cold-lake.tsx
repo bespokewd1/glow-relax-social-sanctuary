@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { IMAGES, isOpen } from "@/lib/site";
+import { IMAGES, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { PageHeader, Section, Placeholder, CallBookButtons, Faq, CtaBand } from "@/components/site/blocks";
 
@@ -33,7 +33,7 @@ function LipsPage() {
         intro={
           <>
             <p>A softer, longer-lasting lip colour that starts with a relaxed, no-pressure consultation.</p>
-            {!isOpen("beauty") && <p className="mt-4 text-base font-semibold text-foreground">Beauty services begin November 15, 2026.</p>}
+            {!isOpen("beauty") && <p className="mt-4 text-base font-semibold text-foreground">Beauty services begin {OPENING_DATE_LABEL}.</p>}
           </>
         }
       />

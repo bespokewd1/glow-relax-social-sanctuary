@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { IMAGES, PRICING_LABEL, isOpen } from "@/lib/site";
+import { IMAGES, PRICING_LABEL, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { PageHeader, Section, Placeholder, CallBookButtons, CtaBand } from "@/components/site/blocks";
 
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/brows-lashes-cold-lake")({
     pageHead({
       path: "/brows-lashes-cold-lake",
       title: "Eyebrow & Lash Services in Cold Lake | Glow & Relax",
-      description: "Brow and lash services inside Marina Mall, Cold Lake, Alberta. Beauty appointments begin November 15, 2026. Call 1-825-734-0539.",
+      description: `Brow and lash services inside Marina Mall, Cold Lake, Alberta. Beauty appointments begin ${OPENING_DATE_LABEL}. Call 1-825-734-0539.`,
       image: IMAGES.beauty,
     }),
   component: BrowsPage,
@@ -54,7 +54,7 @@ function BrowsPage() {
         intro={
           <>
             <p>Thoughtful brow and lash services designed to complement your natural features, offered in our studio inside Marina Mall.</p>
-            {!isOpen("beauty") && <p className="mt-4 text-base font-semibold text-foreground">Beauty services begin November 15, 2026.</p>}
+            {!isOpen("beauty") && <p className="mt-4 text-base font-semibold text-foreground">Beauty services begin {OPENING_DATE_LABEL}.</p>}
           </>
         }
       />

@@ -44,9 +44,10 @@ export const SITE = {
 };
 
 export const OPENINGS = {
-  beauty: "2026-11-15",
+  beauty: "2026-12-01",
   massage: "2026-12-01",
 };
+export const OPENING_DATE_LABEL = "December 1st, 2026";
 
 export function isOpen(kind: keyof typeof OPENINGS, now: Date = new Date()) {
   return now >= new Date(`${OPENINGS[kind]}T00:00:00-07:00`);
@@ -54,7 +55,7 @@ export function isOpen(kind: keyof typeof OPENINGS, now: Date = new Date()) {
 
 /** Returns the pre-launch notice, or null once both services have opened. */
 export function openingNotice(now: Date = new Date()): string | null {
-  if (!isOpen("beauty", now) || !isOpen("massage", now)) return "All Services start December 1st, 2026";
+  if (!isOpen("beauty", now) || !isOpen("massage", now)) return `All Services start ${OPENING_DATE_LABEL}`;
   return null;
 }
 

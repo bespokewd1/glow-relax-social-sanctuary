@@ -1,4 +1,4 @@
-import { IMAGES } from "./site";
+import { IMAGES, OPENING_DATE_LABEL } from "./site";
 
 export interface Post {
   slug: string;
@@ -118,9 +118,9 @@ export const POSTS: Post[] = [
     related: { to: "/", label: "Visit the Glow & Relax home page" },
     body: `<p>Glow &amp; Relax is a new massage and beauty studio inside Marina Mall in Cold Lake, Alberta. Here's an overview of what's offered.</p>
 <h2>Massage</h2>
-<p>Massage options include relaxation, Swedish, deep tissue, prenatal, hot stone and cupping massage. Massage services begin December 1, 2026.</p>
+<p>Massage options include relaxation, Swedish, deep tissue, prenatal, hot stone and cupping massage. Massage services begin ${OPENING_DATE_LABEL}.</p>
 <h2>Brows and lashes</h2>
-<p>Brow and lash services are designed to complement your natural features. Beauty services begin November 15, 2026.</p>
+<p>Brow and lash services are designed to complement your natural features. Beauty services begin ${OPENING_DATE_LABEL}.</p>
 <h2>Permanent lip colour</h2>
 <p>Permanent lip colour starts with a consultation to talk through your goals and suitability.</p>
 <h2>Finding the studio</h2>

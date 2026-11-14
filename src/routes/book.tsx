@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
-import { SITE, isOpen } from "@/lib/site";
+import { SITE, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { PageHeader, Section, HoursList } from "@/components/site/blocks";
 
@@ -38,13 +38,13 @@ function Book() {
           <div className="space-y-6">
             <div className="border-l-2 border-blush pl-5">
               <h2 className="text-2xl">Beauty services</h2>
-              <p className="mt-1 text-muted-foreground">{isOpen("beauty") ? "Now booking." : "Appointments available from November 15, 2026."}</p>
+              <p className="mt-1 text-muted-foreground">{isOpen("beauty") ? "Now booking." : `Appointments available from ${OPENING_DATE_LABEL}.`}</p>
               <Link to="/brows-lashes-cold-lake" className="mt-2 inline-block text-sm text-primary underline">Brows &amp; lashes</Link>{" · "}
               <Link to="/permanent-lip-colour-cold-lake" className="text-sm text-primary underline">Permanent lip colour</Link>
             </div>
             <div className="border-l-2 border-blush pl-5">
               <h2 className="text-2xl">Massage services</h2>
-              <p className="mt-1 text-muted-foreground">{isOpen("massage") ? "Now booking." : "Appointments available from December 1, 2026."}</p>
+              <p className="mt-1 text-muted-foreground">{isOpen("massage") ? "Now booking." : `Appointments available from ${OPENING_DATE_LABEL}.`}</p>
               <Link to="/massage-cold-lake" className="mt-2 inline-block text-sm text-primary underline">View massage options</Link>
             </div>
             <p className="text-sm text-muted-foreground">Please review our <Link to="/booking-policy" className="underline">booking &amp; cancellation policy</Link>.</p>
