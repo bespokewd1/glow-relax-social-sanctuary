@@ -1,14 +1,20 @@
-# Welcome to your Lovable project
+# Glow Relax Social Sanctuary
+
+add FB Link: https://www.facebook.com/glowandrelaxrmt
+for google reviews, put placeholder, coming soon, and will add 
+for photos, use stock but natural photos and not AI looking, will optimize later
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://glow-relax-social-sanctuary.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a42665cb-53d0-40d4-a851-7a6e7b53e95e).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +26,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
