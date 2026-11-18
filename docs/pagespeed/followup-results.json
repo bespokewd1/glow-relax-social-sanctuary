@@ -1,0 +1,249 @@
+{
+  "date": "2026-11-18",
+  "method": "Compiled local production builds; same gzip adapter; three alternating default mobile Lighthouse runs per stage, plus final desktop and service-page audits. Live third-party resources; no deployment.",
+  "lighthouseVersion": "13.6.0",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+  "stages": {
+    "baseline": {
+      "assets": {
+        "mainJs": {
+          "file": "index-DYw9CTup.js",
+          "bytes": 373107,
+          "gzipBytes": 118175
+        },
+        "css": {
+          "file": "styles-DsGzfZlF.css",
+          "bytes": 80894,
+          "gzipBytes": 14177
+        }
+      },
+      "runs": [
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2657.0933,
+          "fcpMs": 770.0933,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 52524
+        },
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2653.958,
+          "fcpMs": 766.9580000000001,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 52524
+        },
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2652.0729,
+          "fcpMs": 765.5728999999999,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 52524
+        }
+      ],
+      "median": {
+        "performance": 97,
+        "lcpMs": 2653.958,
+        "fcpMs": 766.9580000000001
+      }
+    },
+    "css-only": {
+      "assets": {
+        "mainJs": {
+          "file": "index-Bz5LcpCf.js",
+          "bytes": 373107,
+          "gzipBytes": 118180
+        },
+        "css": {
+          "file": "styles-BT45MPJU.css",
+          "bytes": 28362,
+          "gzipBytes": 6340
+        }
+      },
+      "runs": [
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2666.8479,
+          "fcpMs": 779.8479,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 52543
+        },
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2653.0805,
+          "fcpMs": 767.0805,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 52526
+        },
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2654.0505,
+          "fcpMs": 767.5505,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 52526
+        }
+      ],
+      "median": {
+        "performance": 97,
+        "lcpMs": 2654.0505,
+        "fcpMs": 767.5505
+      }
+    },
+    "final": {
+      "assets": {
+        "mainJs": {
+          "file": "index-e-SSz-gT.js",
+          "bytes": 348472,
+          "gzipBytes": 111152
+        },
+        "css": {
+          "file": "styles-BT45MPJU.css",
+          "bytes": 28362,
+          "gzipBytes": 6340
+        }
+      },
+      "runs": [
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2565.0461,
+          "fcpMs": 765.0461,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 45818
+        },
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2576.8001,
+          "fcpMs": 765.3000999999999,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 45818
+        },
+        {
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "lcpMs": 2565.8727,
+          "fcpMs": 754.3726999999999,
+          "tbtMs": 0,
+          "cls": 0,
+          "unusedJsBytes": 45818
+        }
+      ],
+      "median": {
+        "performance": 97,
+        "lcpMs": 2565.8727,
+        "fcpMs": 765.0461
+      }
+    }
+  },
+  "finalDesktop": {
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 562.5694000000001,
+    "fcpMs": 382.5694,
+    "tbtMs": 0,
+    "cls": 0,
+    "unusedJsBytes": 45836
+  },
+  "finalMassageMobile": {
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 2639.5245999999997,
+    "fcpMs": 764.5246,
+    "tbtMs": 0,
+    "cls": 0,
+    "unusedJsBytes": 44164
+  },
+  "smoke": {
+    "checks": 499,
+    "routes": 16,
+    "failures": []
+  },
+  "interactions": {
+    "baseline": {
+      "checks": 141,
+      "pages": 14,
+      "failures": [],
+      "warnings": []
+    },
+    "final": {
+      "checks": 141,
+      "pages": 14,
+      "failures": [],
+      "warnings": []
+    }
+  },
+  "screenshots": {
+    "total": 19,
+    "identical": 18,
+    "differences": [
+      {
+        "file": "desktop-contact.png",
+        "changedPixels": 253719,
+        "bounds": {
+          "left": 577,
+          "top": 563,
+          "right": 1249,
+          "bottom": 939
+        }
+      }
+    ]
+  }
+}

@@ -1,8 +1,7 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -90,7 +89,7 @@ const localBusiness = {
 
 const website = { "@context": "https://schema.org", "@type": "WebSite", name: SITE.name, url: SITE.url, publisher: { "@id": `${SITE.url}/#business` } };
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -135,10 +134,8 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-background focus:p-3">Skip to content</a>
       <SiteHeader />
       <main id="main">
@@ -146,6 +143,6 @@ function RootComponent() {
       </main>
       <SiteFooter />
       <MobileActionBar />
-    </QueryClientProvider>
+    </>
   );
 }

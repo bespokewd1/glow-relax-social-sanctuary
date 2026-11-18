@@ -1,5 +1,7 @@
 # PageSpeed audit and implementation
 
+For the subsequent CSS and runtime reduction, see the [follow-up audit](followup-audit.md).
+
 Reviewed and implemented on November 18, 2026. Validation used local production builds. Publishing and deployment were outside this work's scope.
 
 ## Scope and changes
