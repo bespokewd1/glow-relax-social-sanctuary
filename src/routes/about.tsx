@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { IMAGES, SITE } from "@/lib/site";
-import santiaga from "@/assets/santiaga-patoy-rmt-photo.png.asset.json";
 import { pageHead } from "@/lib/seo";
+import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 import { Section, CtaBand } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/about")({
@@ -19,24 +19,11 @@ function About() {
   return (
     <>
       <Section className="pt-8 md:pt-12">
-        <div className="grid gap-12 md:grid-cols-[0.75fr_1.25fr] md:items-start">
-          <figure>
-            <img
-              src={santiaga.url}
-              alt={`${SITE.therapist.name}, RMT at Glow & Relax in Cold Lake`}
-              width={900}
-              height={1125}
-              loading="lazy"
-              className="aspect-[4/5] w-full rounded-md object-cover object-top"
-            />
-            <figcaption className="mt-4">
-              <p className="font-display text-2xl">{SITE.therapist.name}, RMT</p>
-              <p className="text-sm text-muted-foreground">{SITE.therapist.role} • {SITE.therapist.title}</p>
-            </figcaption>
-          </figure>
-
+        <div className="mx-auto max-w-3xl">
           <div>
             <h1 className="text-4xl md:text-5xl">About Me</h1>
+            <p className="mt-4 font-display text-2xl">{SITE.therapist.name}, RMT</p>
+            <p className="text-sm text-muted-foreground">{SITE.therapist.role} • {SITE.therapist.title}</p>
             <div className="mt-5 space-y-5 text-lg leading-relaxed text-muted-foreground">
               <p>
                 Hi, I'm {SITE.therapist.name}, the owner of Glow &amp; Relax in Cold Lake, Alberta.
@@ -52,7 +39,7 @@ function About() {
               </p>
             </div>
             <div className="mt-8 border-t border-taupe pt-8">
-              <h3 className="text-2xl">My Mission</h3>
+              <h2 className="text-2xl">My Mission</h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">{SITE.therapist.mission}</p>
             </div>
 
@@ -98,12 +85,12 @@ function About() {
               <Link to="/contact" className="btn btn-outline">Ask Me Anything</Link>
             </div>
           </div>
-          <img src={IMAGES.beauty} alt="Beauty professional shaping a client's eyebrows" loading="lazy" className="aspect-[4/3] w-full rounded-md object-cover" width={1200} height={900} />
+          <img {...responsiveImage(IMAGES.beauty, IMAGE_SIZES.twoColumn, 4 / 3)} alt="Beauty professional shaping a client's eyebrows" loading="lazy" className="aspect-[4/3] w-full rounded-md object-cover" width={1200} height={900} />
         </div>
       </Section>
 
       <Section className="bg-card">
-        <img src={IMAGES.candle} alt="Spa towel, lotion and tulips" loading="lazy" className="aspect-[21/9] w-full rounded-md object-cover" width={1600} height={700} />
+        <img {...responsiveImage(IMAGES.candle, IMAGE_SIZES.fullWidth, 21 / 9, [480, 768, 1080, 1440, 1920])} alt="Spa towel, lotion and tulips" loading="lazy" className="aspect-[21/9] w-full rounded-md object-cover" width={1680} height={720} />
       </Section>
       <CtaBand />
     </>

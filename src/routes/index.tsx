@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
 import { SITE, IMAGES, openingNotice } from "@/lib/site";
-import santiaga from "@/assets/santiaga-patoy-rmt-photo.png.asset.json";
 import { pageHead } from "@/lib/seo";
+import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 import { BookButton } from "@/components/site/book-button";
 import { Section, SectionTitle, CtaBand, VisitUs, ReviewsSection } from "@/components/site/blocks";
 
@@ -75,7 +75,7 @@ function Home() {
           ].map((s) => (
             <article key={s.title} className="group">
               <Link to={s.to} className="block overflow-hidden rounded-md">
-                <img src={s.img} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={1200} height={900} />
+                <img {...responsiveImage(s.img, IMAGE_SIZES.twoColumn, 4 / 3)} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={1200} height={900} />
               </Link>
               <h3 className="mt-6 text-3xl">{s.title}</h3>
               <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">{s.text}</p>
@@ -97,7 +97,7 @@ function Home() {
             { n: "03", t: "Convenient Cold Lake Location", d: "Find us inside Marina Mall on 10 Street, with easy access and weekday hours that fit around errands and work." },
           ].map((v) => (
             <div key={v.n} className="border-t border-taupe pt-6">
-              <span className="font-display text-2xl text-blush">{v.n}</span>
+              <span className="font-display text-2xl text-blush-foreground">{v.n}</span>
               <h3 className="mt-2 text-2xl">{v.t}</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">{v.d}</p>
             </div>
@@ -112,7 +112,7 @@ function Home() {
             <SectionTitle eyebrow="Popular services" title="Where Most Guests Begin">
               Not sure what to choose? Call us and we'll help you find the right fit.
             </SectionTitle>
-            <img src={IMAGES.stillLife} alt="Massage oil bottle with eucalyptus on soft linen" loading="lazy" className="hidden aspect-[4/5] w-full rounded-md object-cover lg:block" width={900} height={1100} />
+            <img {...responsiveImage(IMAGES.stillLife, IMAGE_SIZES.stillLife, 4 / 5, [320, 480, 640, 768, 960])} alt="Massage oil bottle with eucalyptus on soft linen" loading="lazy" className="hidden aspect-[4/5] w-full rounded-md object-cover lg:block" width={800} height={1000} />
           </div>
           <ul className="divide-y border-y self-start">
             {POPULAR.map((p) => (
@@ -132,15 +132,7 @@ function Home() {
 
       {/* Meet */}
       <Section className="bg-secondary/40">
-        <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr]">
-          <img
-            src={santiaga.url}
-            alt={`${SITE.therapist.name}, Registered Massage Therapist at Glow & Relax in Cold Lake`}
-            width={1200}
-            height={1224}
-            loading="lazy"
-            className="aspect-[4/5] w-full rounded-md object-cover object-top"
-          />
+        <div className="mx-auto max-w-3xl">
           <div>
             <p className="eyebrow">Meet your therapist</p>
             <h2 className="mt-3 text-3xl md:text-4xl">The Hands Behind Glow &amp; Relax</h2>

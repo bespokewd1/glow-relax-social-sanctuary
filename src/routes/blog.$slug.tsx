@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getPost, formatDate } from "@/lib/blog";
 import { pageHead } from "@/lib/seo";
+import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 import { CtaBand } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -28,7 +29,7 @@ function PostPage() {
         <p className="mt-6 text-sm text-muted-foreground">{formatDate(post.date)}</p>
         {post.draft && <p className="mt-2 inline-block bg-accent px-2 py-1 text-xs font-bold uppercase tracking-widest text-accent-foreground">Draft — pending review</p>}
         <h1 className="mt-4 text-4xl md:text-5xl">{post.title}</h1>
-        <img src={post.image} alt={post.imageAlt} className="mt-8 aspect-[3/2] w-full rounded-md object-cover" width={1200} height={800} />
+        <img {...responsiveImage(post.image, IMAGE_SIZES.article, 3 / 2, [320, 480, 640, 768, 1080, 1440])} alt={post.imageAlt} className="mt-8 aspect-[3/2] w-full rounded-md object-cover" width={1200} height={800} fetchPriority="high" />
         <div className="prose-site mt-10" dangerouslySetInnerHTML={{ __html: post.body }} />
         <div className="mt-10 border-t pt-8">
           <Link to={post.related.to} className="btn btn-outline">{post.related.label}</Link>

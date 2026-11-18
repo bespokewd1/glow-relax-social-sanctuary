@@ -4,6 +4,7 @@ import { MapPin, Clock, Phone, Star, Facebook } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookButton } from "./book-button";
 import { SITE, directionsUrl, mapEmbedUrl } from "@/lib/site";
+import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 
 export function PageHeader({ eyebrow, title, intro, image, imageAlt }: { eyebrow: string; title: string; intro?: ReactNode; image?: string; imageAlt?: string }) {
   return (
@@ -15,7 +16,7 @@ export function PageHeader({ eyebrow, title, intro, image, imageAlt }: { eyebrow
           {intro && <div className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">{intro}</div>}
         </div>
         {image && (
-          <img src={image} alt={imageAlt ?? ""} className="aspect-[4/3] w-full rounded-md object-cover" width={1200} height={900} />
+          <img {...responsiveImage(image, IMAGE_SIZES.pageHeader, 4 / 3)} alt={imageAlt ?? ""} className="aspect-[4/3] w-full rounded-md object-cover" width={1200} height={900} fetchPriority="high" />
         )}
       </div>
     </section>
@@ -43,7 +44,7 @@ export function SectionTitle({ eyebrow, title, children, center }: { eyebrow?: s
 export function Placeholder({ children }: { children: ReactNode }) {
   return (
     <div className="rounded-md border border-dashed border-taupe bg-card p-5 text-sm text-muted-foreground">
-      <span className="mb-1 block text-xs font-bold uppercase tracking-widest text-blush">Details coming soon</span>
+      <span className="mb-1 block text-xs font-bold uppercase tracking-widest text-blush-foreground">Details coming soon</span>
       {children}
     </div>
   );
@@ -95,17 +96,26 @@ export function VisitUs({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
         <H className="mt-3 text-3xl md:text-4xl">Visit Us in Cold Lake</H>
         <p className="mt-3 text-muted-foreground">Located inside Marina Mall.</p>
         <dl className="mt-8 space-y-6">
-          <div className="flex gap-4">
-            <MapPin className="mt-1 h-5 w-5 shrink-0 text-blush" aria-hidden />
-            <div><dt className="sr-only">Address</dt><dd><address className="not-italic">{a.venue}<br />{a.street}<br />{a.city} {a.region} {a.postal}<br /><span className="text-muted-foreground">{a.note}</span></address></dd></div>
+          <div>
+            <dt className="sr-only">Address</dt>
+            <dd className="flex gap-4">
+              <MapPin className="mt-1 h-5 w-5 shrink-0 text-blush" aria-hidden />
+              <address className="not-italic">{a.venue}<br />{a.street}<br />{a.city} {a.region} {a.postal}<br /><span className="text-muted-foreground">{a.note}</span></address>
+            </dd>
           </div>
-          <div className="flex gap-4">
-            <Clock className="mt-1 h-5 w-5 shrink-0 text-blush" aria-hidden />
-            <div><dt className="sr-only">Hours</dt><dd><HoursList /></dd></div>
+          <div>
+            <dt className="sr-only">Hours</dt>
+            <dd className="flex gap-4">
+              <Clock className="mt-1 h-5 w-5 shrink-0 text-blush" aria-hidden />
+              <HoursList />
+            </dd>
           </div>
-          <div className="flex gap-4">
-            <Phone className="mt-1 h-5 w-5 shrink-0 text-blush" aria-hidden />
-            <div><dt className="sr-only">Phone</dt><dd><a href={SITE.phoneHref} className="font-semibold underline-offset-4 hover:underline">{SITE.phoneDisplay}</a></dd></div>
+          <div>
+            <dt className="sr-only">Phone</dt>
+            <dd className="flex gap-4">
+              <Phone className="mt-1 h-5 w-5 shrink-0 text-blush" aria-hidden />
+              <a href={SITE.phoneHref} className="font-semibold underline-offset-4 hover:underline">{SITE.phoneDisplay}</a>
+            </dd>
           </div>
         </dl>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">

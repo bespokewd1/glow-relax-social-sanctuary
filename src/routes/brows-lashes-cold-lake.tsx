@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { IMAGES, PRICING_LABEL, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
+import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 import { PageHeader, Section, Placeholder, CallBookButtons, CtaBand } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/brows-lashes-cold-lake")({
@@ -21,7 +22,7 @@ function ServiceGroup({ title, intro, items, img, alt }: { title: string; intro:
   return (
     <div className="grid items-start gap-10 md:grid-cols-2">
       <div>
-        <img src={img} alt={alt} loading="lazy" className="aspect-[4/3] w-full rounded-md object-cover" width={1200} height={900} />
+        <img {...responsiveImage(img, IMAGE_SIZES.twoColumn, 4 / 3)} alt={alt} loading="lazy" className="aspect-[4/3] w-full rounded-md object-cover" width={1200} height={900} />
       </div>
       <div>
         <h2 className="text-3xl md:text-4xl">{title}</h2>
@@ -32,7 +33,7 @@ function ServiceGroup({ title, intro, items, img, alt }: { title: string; intro:
               <div key={s.name} className="border-b pb-4">
                 <h3 className="text-xl">{s.name}</h3>
                 <p className="text-muted-foreground">{s.description}</p>
-                <p className="text-sm text-blush">{PRICING_LABEL}</p>
+                <p className="text-sm text-blush-foreground">{PRICING_LABEL}</p>
               </div>
             ))
           ) : (

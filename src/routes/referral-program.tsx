@@ -28,7 +28,7 @@ function Referral() {
         <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <li key={s} className="border-t border-taupe pt-5">
-              <span className="font-display text-3xl text-blush">{i + 1}</span>
+              <span className="font-display text-3xl text-blush-foreground">{i + 1}</span>
               <p className="mt-2 text-lg">{s}</p>
             </li>
           ))}

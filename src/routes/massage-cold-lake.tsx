@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MASSAGE_SERVICES, IMAGES, PRICING_LABEL, SITE, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
+import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 import { PageHeader, Section, SectionTitle, CallBookButtons, Faq, CtaBand } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/massage-cold-lake")({
@@ -38,14 +39,14 @@ function MassagePage() {
         <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {MASSAGE_SERVICES.map((s) => (
             <article key={s.slug} id={s.slug}>
-              <img src={s.image} alt="" loading="lazy" className="aspect-[3/2] w-full rounded-md object-cover" width={1200} height={800} />
+              <img {...responsiveImage(s.image, IMAGE_SIZES.massageCard, 3 / 2)} alt="" loading="lazy" className="aspect-[3/2] w-full rounded-md object-cover" width={1200} height={800} />
               <h3 className="mt-5 text-2xl">{s.name}</h3>
               <p className="mt-2 leading-relaxed text-muted-foreground">{s.description}</p>
               <p className="mt-3 text-sm">
                 <span className="font-semibold">Durations:</span>{" "}
                 {s.durations.length ? s.durations.map((d) => `${d} min`).join(" · ") : "to be confirmed"}
               </p>
-              <p className="mt-1 text-sm text-blush">{PRICING_LABEL}</p>
+              <p className="mt-1 text-sm text-blush-foreground">{PRICING_LABEL}</p>
             </article>
           ))}
         </div>

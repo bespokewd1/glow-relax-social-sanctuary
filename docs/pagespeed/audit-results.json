@@ -1,0 +1,422 @@
+{
+  "date": "2026-11-18",
+  "method": "Local compiled production builds; gzip adapter; default Lighthouse mobile and desktop preset; single lab runs with live third-party requests; no deployment",
+  "lighthouseVersion": "13.6.0",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+  "savedPageSpeedScreenshots": {
+    "mobile": {
+      "performance": 97,
+      "accessibility": 88,
+      "bestPractices": 96,
+      "seo": 100,
+      "lcpMs": 2600
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 88,
+      "bestPractices": 96,
+      "seo": 100,
+      "lcpMs": 700
+    }
+  },
+  "rows": [
+    {
+      "page": "home",
+      "device": "mobile",
+      "before": {
+        "scores": {
+          "performance": 94,
+          "accessibility": 88,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "fcpMs": 1455.0949999999998,
+        "lcpMs": 2962.374,
+        "tbtMs": 0,
+        "cls": 0.0001522524504339841,
+        "fetchTime": "2026-11-18T06:51:58.406Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcpMs": 770.6268,
+        "lcpMs": 2657.6268,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T06:56:19.725Z"
+      }
+    },
+    {
+      "page": "home",
+      "device": "desktop",
+      "before": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 88,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "fcpMs": 456.5466,
+        "lcpMs": 762.9250999999999,
+        "tbtMs": 0,
+        "cls": 0.003359550561797753,
+        "fetchTime": "2026-11-18T06:52:13.921Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcpMs": 392.571,
+        "lcpMs": 572.571,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T07:09:31.908Z"
+      }
+    },
+    {
+      "page": "contact",
+      "device": "mobile",
+      "before": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 90,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "fcpMs": 1442.9752500000004,
+        "lcpMs": 1442.9752500000004,
+        "tbtMs": 0,
+        "cls": 0.0009514503782540349,
+        "fetchTime": "2026-11-18T07:04:38.667Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcpMs": 760.925,
+        "lcpMs": 760.925,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T06:57:29.196Z"
+      }
+    },
+    {
+      "page": "contact",
+      "device": "desktop",
+      "before": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 90,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "fcpMs": 456.86015000000003,
+        "lcpMs": 456.86015000000003,
+        "tbtMs": 0,
+        "cls": 0.02735656152973975,
+        "fetchTime": "2026-11-18T07:04:50.860Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcpMs": 219.6214,
+        "lcpMs": 219.6214,
+        "tbtMs": 0,
+        "cls": 0.00001196489639692183,
+        "fetchTime": "2026-11-18T06:57:41.249Z"
+      }
+    },
+    {
+      "page": "about",
+      "device": "mobile",
+      "before": {
+        "scores": {
+          "performance": 94,
+          "accessibility": 94,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "fcpMs": 1445.1342999999997,
+        "lcpMs": 2952.1002999999996,
+        "tbtMs": 0,
+        "cls": 0.003390843484058105,
+        "fetchTime": "2026-11-18T07:05:03.859Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcpMs": 755.44525,
+        "lcpMs": 755.44525,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T06:57:53.933Z"
+      }
+    },
+    {
+      "page": "about",
+      "device": "desktop",
+      "before": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 94,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "fcpMs": 459.36350000000004,
+        "lcpMs": 459.36350000000004,
+        "tbtMs": 0,
+        "cls": 0.0009195479003206307,
+        "fetchTime": "2026-11-18T07:05:14.817Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcpMs": 381.94559999999996,
+        "lcpMs": 381.94559999999996,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T06:58:04.671Z"
+      }
+    },
+    {
+      "page": "massage",
+      "device": "mobile",
+      "before": {
+        "scores": {
+          "performance": 95,
+          "accessibility": 96,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "fcpMs": 1442.5211999999997,
+        "lcpMs": 2887.1227,
+        "tbtMs": 0,
+        "cls": 0.0008186895113870106,
+        "fetchTime": "2026-11-18T07:05:25.738Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcpMs": 769.22,
+        "lcpMs": 2569.22,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T06:58:15.399Z"
+      }
+    },
+    {
+      "page": "massage",
+      "device": "desktop",
+      "before": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 96,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "fcpMs": 455.8905500000001,
+        "lcpMs": 730.1590500000001,
+        "tbtMs": 0,
+        "cls": 0.0009556867510072128,
+        "fetchTime": "2026-11-18T07:05:36.700Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcpMs": 385.82,
+        "lcpMs": 565.82,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T06:58:26.840Z"
+      }
+    },
+    {
+      "page": "blog-post",
+      "device": "mobile",
+      "before": {
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 69
+        },
+        "fcpMs": 1439.4355,
+        "lcpMs": 2108.6989999999996,
+        "tbtMs": 0,
+        "cls": 0.0001522524504339841,
+        "fetchTime": "2026-11-18T07:05:47.690Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "fcpMs": 770.6692,
+        "lcpMs": 2431.1692,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T07:09:43.306Z"
+      }
+    },
+    {
+      "page": "blog-post",
+      "device": "desktop",
+      "before": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 69
+        },
+        "fcpMs": 451.0452,
+        "lcpMs": 722.7612000000001,
+        "tbtMs": 0,
+        "cls": 0.0004254339282148808,
+        "fetchTime": "2026-11-18T07:05:58.600Z"
+      },
+      "after": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "fcpMs": 385.9845,
+        "lcpMs": 545.9845,
+        "tbtMs": 0,
+        "cls": 0,
+        "fetchTime": "2026-11-18T07:09:54.019Z"
+      }
+    }
+  ],
+  "fontComparison": {
+    "google": {
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "fcpMs": 1441.6212,
+      "lcpMs": 2813.4377,
+      "tbtMs": 0,
+      "cls": 0.0001522524504339841,
+      "fetchTime": "2026-11-18T06:53:37.388Z"
+    },
+    "local": {
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "fcpMs": 770.6268,
+      "lcpMs": 2657.6268,
+      "tbtMs": 0,
+      "cls": 0,
+      "fetchTime": "2026-11-18T06:56:19.725Z"
+    }
+  },
+  "blogRecheck": {
+    "before": {
+      "scores": {
+        "performance": 95
+      },
+      "fcpMs": 1441.52245,
+      "lcpMs": 2873.22295,
+      "tbtMs": 0,
+      "cls": 0.0001522524504339841,
+      "fetchTime": "2026-11-18T07:07:26.828Z"
+    },
+    "after": {
+      "scores": {
+        "performance": 98
+      },
+      "fcpMs": 767.5423000000001,
+      "lcpMs": 2417.5423,
+      "tbtMs": 0,
+      "cls": 0,
+      "fetchTime": "2026-11-18T07:07:37.425Z"
+    }
+  },
+  "images": [
+    {
+      "name": "beauty",
+      "before": {
+        "bytes": 53759,
+        "type": "image/avif"
+      },
+      "after": {
+        "bytes": 27869,
+        "type": "image/avif"
+      },
+      "target": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=640&q=70&h=480"
+    },
+    {
+      "name": "massage",
+      "before": {
+        "bytes": 40065,
+        "type": "image/avif"
+      },
+      "after": {
+        "bytes": 14254,
+        "type": "image/avif"
+      },
+      "target": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=640&q=70&h=480"
+    },
+    {
+      "name": "stillLife",
+      "before": {
+        "bytes": 207783,
+        "type": "image/avif"
+      },
+      "after": {
+        "bytes": 31519,
+        "type": "image/avif"
+      },
+      "target": "https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=480&q=70&h=600"
+    }
+  ],
+  "smoke": {
+    "checks": 499,
+    "routes": 16,
+    "draftRoutes": 5,
+    "localImages": 3,
+    "localFonts": 2,
+    "externalImages": 3,
+    "failures": []
+  },
+  "headerAccessibleNameAudit": "notApplicable"
+}

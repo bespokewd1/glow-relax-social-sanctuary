@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Local PageSpeed audit comparison</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 24px;
+        background: #faf8f4;
+        color: #25382c;
+        font:
+          14px system-ui,
+          sans-serif;
+      }
+      h1 {
+        font-size: 21px;
+        margin: 0 0 8px;
+      }
+      p {
+        margin: 0 0 18px;
+        color: #556158;
+        font-size: 13px;
+      }
+      .legend {
+        display: flex;
+        gap: 20px;
+        font-size: 12px;
+        margin-bottom: 16px;
+      }
+      .dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 6px;
+        border-radius: 2px;
+      }
+      .before {
+        background: #a7afa8;
+      }
+      .after {
+        background: #365e43;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 105px 1fr 74px;
+        gap: 12px;
+        align-items: center;
+        margin: 14px 0;
+      }
+      .bars {
+        display: grid;
+        gap: 4px;
+      }
+      .track {
+        background: #e9e8e1;
+        height: 12px;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .fill {
+        height: 100%;
+      }
+      .value {
+        font-size: 13px;
+        font-variant-numeric: tabular-nums;
+      }
+      .axis {
+        display: flex;
+        justify-content: space-between;
+        margin: 2px 86px 16px 117px;
+        color: #6c736d;
+        font-size: 11px;
+      }
+      .callouts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .card {
+        padding: 14px;
+        background: white;
+        border: 1px solid #e1e4db;
+        border-radius: 7px;
+      }
+      .card strong {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+      .card span {
+        font-size: 12px;
+        color: #556158;
+      }
+      footer {
+        font-size: 11px;
+        color: #656d65;
+        margin-top: 18px;
+        line-height: 1.5;
+      }
+      @media (max-width: 450px) {
+        body {
+          padding: 16px;
+        }
+        .row {
+          grid-template-columns: 80px 1fr 64px;
+          gap: 8px;
+        }
+        .axis {
+          margin-left: 88px;
+          margin-right: 72px;
+        }
+        .callouts {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Local mobile performance before and after</h1>
+    <p>Compiled production builds · Lighthouse 13.6.0 · November 18, 2026</p>
+    <div class="legend">
+      <span><i class="dot before"></i>Baseline</span><span><i class="dot after"></i>Updated</span>
+    </div>
+    <div class="row">
+      <span>Home</span>
+      <div class="bars">
+        <div class="track"><div class="fill before" style="width: 94%"></div></div>
+        <div class="track"><div class="fill after" style="width: 97%"></div></div>
+      </div>
+      <span class="value">94 → 97</span>
+    </div>
+    <div class="row">
+      <span>Contact</span>
+      <div class="bars">
+        <div class="track"><div class="fill before" style="width: 100%"></div></div>
+        <div class="track"><div class="fill after" style="width: 100%"></div></div>
+      </div>
+      <span class="value">100 → 100</span>
+    </div>
+    <div class="row">
+      <span>About</span>
+      <div class="bars">
+        <div class="track"><div class="fill before" style="width: 94%"></div></div>
+        <div class="track"><div class="fill after" style="width: 100%"></div></div>
+      </div>
+      <span class="value">94 → 100</span>
+    </div>
+    <div class="row">
+      <span>Massage</span>
+      <div class="bars">
+        <div class="track"><div class="fill before" style="width: 95%"></div></div>
+        <div class="track"><div class="fill after" style="width: 97%"></div></div>
+      </div>
+      <span class="value">95 → 97</span>
+    </div>
+    <div class="row">
+      <span>Blog draft</span>
+      <div class="bars">
+        <div class="track"><div class="fill before" style="width: 99%"></div></div>
+        <div class="track"><div class="fill after" style="width: 98%"></div></div>
+      </div>
+      <span class="value">99 → 98</span>
+    </div>
+    <div class="axis"><span>0</span><span>Performance score / 100</span><span>100</span></div>
+    <div class="callouts">
+      <div class="card">
+        <strong>100 / 100</strong
+        ><span>Accessibility and best practices on all five tested pages, mobile and desktop</span>
+      </div>
+      <div class="card">
+        <strong>76% less image data</strong
+        ><span>Three representative desktop image candidates: 301,607 → 73,642 bytes</span>
+      </div>
+    </div>
+    <footer>
+      Individual local lab runs, not deployed PageSpeed or real-user results. The blog baseline
+      varied from 95 to 99 in repeat tests; the updated result was 98. Its draft noindex remains
+      intentional. All desktop performance scores were 100 before and after.
+    </footer>
+  </body>
+</html>

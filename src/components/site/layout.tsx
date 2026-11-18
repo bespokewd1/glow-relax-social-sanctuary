@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, Phone, X, Facebook, CalendarDays } from "lucide-react";
-import logo from "@/assets/glow-and-relax-logo.png.asset.json";
-import { SITE, openingNotice } from "@/lib/site";
+import { SITE, SITE_ASSETS, openingNotice } from "@/lib/site";
 import { BookButton } from "./book-button";
 
 const NAV = [
@@ -23,8 +22,8 @@ export function SiteHeader() {
         <div className="bg-ink py-2 text-center text-xs tracking-wide text-ink-foreground">{notice}</div>
       )}
       <div className="container-site flex h-24 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3" aria-label="Glow & Relax home">
-          <img src={logo.url} alt="Glow and Relax logo" width={80} height={80} className="h-[4.5rem] w-[4.5rem] rounded-full object-cover md:h-20 md:w-20" />
+        <Link to="/" className="flex items-center gap-3">
+          <img src={SITE_ASSETS.logo.src} srcSet={SITE_ASSETS.logo.srcSet} sizes="(min-width: 768px) 80px, 72px" alt={`${SITE.name} home`} width={SITE_ASSETS.logo.width} height={SITE_ASSETS.logo.height} className="h-auto w-[4.5rem] shrink-0 object-contain md:w-20" />
           <span className="hidden font-display text-xl leading-none sm:block">
             Glow &amp; Relax
             <span className="mt-1 block font-sans text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">Cold Lake, Alberta</span>

@@ -13,8 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader, SiteFooter, MobileActionBar } from "@/components/site/layout";
-import { SITE, MASSAGE_SERVICES } from "@/lib/site";
-import logo from "@/assets/glow-and-relax-logo.png.asset.json";
+import { SITE, SITE_ASSETS, MASSAGE_SERVICES } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -60,8 +59,8 @@ const localBusiness = {
   name: SITE.name,
   description: SITE.tagline,
   url: SITE.url,
-  logo: `${SITE.url}${logo.url}`,
-  image: `${SITE.url}${logo.url}`,
+  logo: `${SITE.url}${SITE_ASSETS.logo.src}`,
+  image: `${SITE.url}${SITE_ASSETS.logo.src}`,
   hasMap: `https://www.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}`,
   areaServed: ["Cold Lake", "4 Wing Cold Lake", "Bonnyville", "Lakeland County"].map((name) => ({ "@type": "City", name })),
   employee: { "@type": "Person", name: SITE.therapist.name, jobTitle: SITE.therapist.title },
@@ -106,10 +105,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "preload", href: "/fonts/cormorant-garamond-latin.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: "/fonts/mulish-latin.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://images.unsplash.com" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Mulish:wght@400;600;700&display=swap" },
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(localBusiness) },

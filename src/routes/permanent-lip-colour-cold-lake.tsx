@@ -46,7 +46,7 @@ function LipsPage() {
           <ol className="space-y-8">
             {STEPS.map((s, i) => (
               <li key={s.t} className="flex gap-5 border-b pb-8">
-                <span className="font-display text-3xl text-blush">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-display text-3xl text-blush-foreground">{String(i + 1).padStart(2, "0")}</span>
                 <div>
                   <h3 className="text-2xl">{s.t}</h3>
                   <p className="mt-2 leading-relaxed text-muted-foreground">{s.d}</p>

@@ -43,6 +43,16 @@ export const SITE = {
   },
 };
 
+/** Approved local brand assets. Portrait stays hidden until an approved photo is available. */
+export const SITE_ASSETS = {
+  logo: {
+    src: "/images/logo/glow-relax-320.webp",
+    srcSet: "/images/logo/glow-relax-80.webp 80w, /images/logo/glow-relax-160.webp 160w, /images/logo/glow-relax-320.webp 320w",
+    width: 320,
+    height: 210,
+  },
+};
+
 export const OPENINGS = {
   beauty: "2026-12-01",
   massage: "2026-12-01",
