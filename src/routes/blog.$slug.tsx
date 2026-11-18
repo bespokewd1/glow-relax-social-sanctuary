@@ -11,7 +11,7 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [{ title: "Article not found | Glow & Relax" }, { name: "robots", content: "noindex" }] };
-    const h = pageHead({ path: `/blog/${params.slug}`, title: `${loaderData.seoTitle} | Glow & Relax`, description: loaderData.description, type: "article", image: loaderData.image });
+    const h = pageHead({ path: `/blog/${params.slug}`, title: `${loaderData.seoTitle} | Glow & Relax`, description: loaderData.description, type: "article" });
     // Drafts stay out of search until reviewed.
     if (loaderData.draft) h.meta.push({ name: "robots", content: "noindex" });
     return h;

@@ -7,8 +7,8 @@ export const Route = createFileRoute("/referral-program")({
   head: () =>
     pageHead({
       path: "/referral-program",
-      title: "Refer a Friend & Save $20 | Glow & Relax Cold Lake",
-      description: "Refer a friend for a massage at Glow & Relax: your friend gets $20 off their eligible massage and you get $20 off your next one.",
+      title: `Refer a Friend & Save $${SITE.referral.friendReward} | Glow & Relax Cold Lake`,
+      description: `Refer a friend for an eligible massage: they get $${SITE.referral.friendReward} off, and you get $${SITE.referral.referrerReward} off your next massage at Glow & Relax.`,
     }),
   component: Referral,
 });

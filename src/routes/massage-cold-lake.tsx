@@ -8,8 +8,7 @@ export const Route = createFileRoute("/massage-cold-lake")({
     pageHead({
       path: "/massage-cold-lake",
       title: "Massage Services in Cold Lake, AB | Glow & Relax",
-      description: `Relaxation, deep tissue, Swedish, prenatal, hot stone and cupping massage inside Marina Mall, Cold Lake. Massage services begin ${OPENING_DATE_LABEL}.`,
-      image: IMAGES.massage,
+      description: "Explore relaxation, deep tissue, Swedish and more massage options at Glow & Relax inside Marina Mall, Cold Lake.",
     }),
   component: MassagePage,
 });

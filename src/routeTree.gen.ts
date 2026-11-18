@@ -21,6 +21,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ReferralProgramRouteImport } from './routes/referral-program'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as DevOgRouteImport } from './routes/dev.og'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -83,6 +84,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DevOgRoute = DevOgRouteImport.update({
+  id: '/dev/og',
+  path: '/dev/og',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/referral-program': typeof ReferralProgramRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/dev/og': typeof DevOgRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/referral-program': typeof ReferralProgramRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/dev/og': typeof DevOgRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/referral-program': typeof ReferralProgramRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/dev/og': typeof DevOgRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/referral-program'
     | '/blog/$slug'
+    | '/dev/og'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/referral-program'
     | '/blog/$slug'
+    | '/dev/og'
     | '/blog'
   id:
     | '__root__'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/referral-program'
     | '/blog/$slug'
+    | '/dev/og'
     | '/blog/'
   fileRoutesById: FileRoutesById
 }
@@ -184,6 +196,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ReferralProgramRoute: typeof ReferralProgramRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  DevOgRoute: typeof DevOgRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
@@ -273,6 +286,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dev/og': {
+      id: '/dev/og'
+      path: '/dev/og'
+      fullPath: '/dev/og'
+      preLoaderRoute: typeof DevOgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -288,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ReferralProgramRoute: ReferralProgramRoute,
   BlogSlugRoute: BlogSlugRoute,
+  DevOgRoute: DevOgRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport

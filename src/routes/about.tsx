@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
       path: "/about",
       title: "About Santiaga Mullen-Patoy, RMT | Glow & Relax Cold Lake",
       description:
-        "Meet Santiaga Mullen-Patoy, RMT and owner of Glow & Relax, a massage and beauty studio inside Marina Mall in Cold Lake, Alberta — personalized massage therapy in a welcoming space.",
+        "Meet Santiaga Mullen-Patoy, RMT and owner of Glow & Relax, a massage and beauty studio in Cold Lake, Alberta.",
     }),
   component: About,
 });

@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contact")({
     pageHead({
       path: "/contact",
       title: "Contact & Location | Glow & Relax, Marina Mall, Cold Lake",
-      description: "Find Glow & Relax at Unit #7, 901 10 Street inside Marina Mall, Cold Lake, AB. Open Monday–Friday 9–4:30. Call 1-825-734-0539.",
+      description: "Find Glow & Relax inside Marina Mall, Cold Lake. View our address, hours, directions and ways to get in touch.",
     }),
   component: Contact,
 });

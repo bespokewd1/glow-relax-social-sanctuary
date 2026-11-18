@@ -14,9 +14,8 @@ export const Route = createFileRoute("/")({
   head: () => {
     const h = pageHead({
       path: "/",
-      title: "Glow & Relax | Massage & Beauty Studio in Cold Lake, Alberta",
-      description: "Massage, brows, lashes and permanent lip colour in a welcoming studio inside Marina Mall, Cold Lake, Alberta. Call 1-825-734-0539 to book.",
-      image: IMAGES.hero,
+      title: "Glow & Relax | Massage & Beauty in Cold Lake",
+      description: "Massage, brows, lashes and permanent lip colour inside Marina Mall, Cold Lake. Call to plan your appointment.",
     });
     return {
       ...h,

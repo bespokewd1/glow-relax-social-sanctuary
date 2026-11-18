@@ -19,8 +19,8 @@ export const POSTS: Post[] = [
   {
     slug: "swedish-vs-deep-tissue-massage",
     title: "Choosing Between Swedish and Deep Tissue Massage",
-    seoTitle: "Swedish vs. Deep Tissue Massage: Which Is Right for You?",
-    description: "A plain-language guide to the differences between Swedish and deep tissue massage, and how to choose for your first appointment.",
+    seoTitle: "Swedish vs. Deep Tissue Massage",
+    description: "Compare Swedish and deep tissue massage, understand the differences, and prepare to choose for your first appointment.",
     date: "2026-11-03",
     image: IMAGES.oil,
     imageAlt: "Therapist pouring massage oil into their hand",
@@ -41,7 +41,7 @@ export const POSTS: Post[] = [
   {
     slug: "what-to-expect-first-massage",
     title: "What to Expect at Your First Massage Appointment",
-    seoTitle: "Your First Massage Appointment: What to Expect",
+    seoTitle: "Your First Massage: What to Expect",
     description: "From booking to arrival to after your session — a calm, step-by-step look at what happens at a first massage appointment.",
     date: "2026-11-03",
     image: IMAGES.towels,
@@ -65,7 +65,7 @@ export const POSTS: Post[] = [
   {
     slug: "preparing-first-eyebrow-appointment",
     title: "Preparing for Your First Eyebrow Appointment",
-    seoTitle: "How to Prepare for Your First Eyebrow Appointment",
+    seoTitle: "Your First Eyebrow Appointment",
     description: "Simple tips to help you prepare for your first brow appointment, from bringing inspiration photos to what to ask.",
     date: "2026-11-03",
     image: IMAGES.beauty,
@@ -87,7 +87,7 @@ export const POSTS: Post[] = [
   {
     slug: "before-permanent-lip-colour",
     title: "What to Know Before Permanent Lip Colour",
-    seoTitle: "Thinking About Permanent Lip Colour? What to Know First",
+    seoTitle: "Before Permanent Lip Colour",
     description: "Key questions to consider before booking permanent lip colour — consultation, expectations, preparation and aftercare.",
     date: "2026-11-03",
     image: IMAGES.lips,
@@ -109,8 +109,8 @@ export const POSTS: Post[] = [
   {
     slug: "massage-and-beauty-cold-lake",
     title: "Exploring Massage and Beauty Services in Cold Lake",
-    seoTitle: "Massage & Beauty Services in Cold Lake, Alberta",
-    description: "An overview of the massage, brow, lash and permanent lip-colour services available at Glow & Relax inside Marina Mall, Cold Lake.",
+    seoTitle: "Massage & Beauty Services in Cold Lake",
+    description: "Explore massage, brow, lash and permanent lip-colour services at Glow & Relax inside Marina Mall, Cold Lake.",
     date: "2026-11-03",
     image: IMAGES.candle,
     imageAlt: "Spa still life with towel, lotion bottle and pink tulips",

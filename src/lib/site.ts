@@ -91,6 +91,16 @@ export const IMAGES = {
   candle: u("1540555700478-4be289fbecef"),
 };
 
+/** Local OG export inputs. Run sync:og-assets after changing a source photograph. */
+export const OG_ASSETS = {
+  photos: Object.fromEntries(Object.entries(IMAGES).map(([key, source]) => [source, `assets/og/photos/${key}.jpg`])),
+  fonts: {
+    display: "assets/og/fonts/CormorantGaramond-Medium.ttf",
+    regular: "assets/og/fonts/Mulish-Regular.ttf",
+    bold: "assets/og/fonts/Mulish-Bold.ttf",
+  },
+};
+
 export const MASSAGE_SERVICES: MassageService[] = [
   { slug: "deep-tissue", name: "Deep Tissue Massage", description: "More focused massage techniques using firmer pressure when appropriate.", durations: [45, 60, 90, 120], image: IMAGES.deepTissue },
   { slug: "relaxation", name: "Relaxation Massage", description: "Gentle massage designed for comfort and relaxation.", durations: [45, 60, 90, 120], image: IMAGES.massage },

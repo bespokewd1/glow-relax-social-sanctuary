@@ -8,8 +8,7 @@ export const Route = createFileRoute("/brows-lashes-cold-lake")({
     pageHead({
       path: "/brows-lashes-cold-lake",
       title: "Eyebrow & Lash Services in Cold Lake | Glow & Relax",
-      description: `Brow and lash services inside Marina Mall, Cold Lake, Alberta. Beauty appointments begin ${OPENING_DATE_LABEL}. Call 1-825-734-0539.`,
-      image: IMAGES.beauty,
+      description: "Explore brow and lash services at Glow & Relax inside Marina Mall, Cold Lake. Contact us to discuss your appointment.",
     }),
   component: BrowsPage,
 });

@@ -8,8 +8,7 @@ export const Route = createFileRoute("/permanent-lip-colour-cold-lake")({
     pageHead({
       path: "/permanent-lip-colour-cold-lake",
       title: "Permanent Lip Colour in Cold Lake, Alberta | Glow & Relax",
-      description: "Learn about permanent lip colour at Glow & Relax in Marina Mall, Cold Lake — consultation, preparation and aftercare. Enquire at 1-825-734-0539.",
-      image: IMAGES.lips,
+      description: "Explore permanent lip colour in Cold Lake, including consultation, preparation and aftercare at Glow & Relax.",
     }),
   component: LipsPage,
 });

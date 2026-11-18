@@ -6,10 +6,15 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig({
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
-  },
-});
+export default (env: import("vite").ConfigEnv) =>
+  defineConfig({
+    tanstackStart: {
+      router: {
+        // The card gallery is a local authoring tool, never a production route.
+        ...(env.command === "build" ? { routeFileIgnorePattern: "dev\\.og\\.tsx$" } : {}),
+      },
+      // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+      // nitro/vite builds from this
+      server: { entry: "server" },
+    },
+  })(env);

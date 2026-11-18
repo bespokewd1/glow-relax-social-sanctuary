@@ -1,0 +1,121 @@
+{
+  "global": {
+    "src": "/og/global-c00a1e3563b5.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Time to relax. Space to be you. Branded massage & beauty card with illustrative photography."
+  },
+  "/": {
+    "src": "/og/home-e7b1d7827db6.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Relax. Restore. Feel beautiful. Branded massage & beauty card with illustrative photography."
+  },
+  "/about": {
+    "src": "/og/about-2544e8e9c11b.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Personal care. A welcoming space. Branded meet your therapist card with illustrative photography."
+  },
+  "/massage-cold-lake": {
+    "src": "/og/massage-9f85a5470041.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Your time to unwind. Branded massage services card with illustrative photography."
+  },
+  "/brows-lashes-cold-lake": {
+    "src": "/og/brows-lashes-1dfe888bd981.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: A little care for your look. Branded brows & lashes card with illustrative photography."
+  },
+  "/permanent-lip-colour-cold-lake": {
+    "src": "/og/lip-colour-07414dc0e38b.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Colour starts with a conversation. Branded permanent lip colour card with illustrative photography."
+  },
+  "/contact": {
+    "src": "/og/contact-aa256b88e456.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Let’s plan your visit. Branded contact & location card with illustrative photography."
+  },
+  "/book": {
+    "src": "/og/book-19707c5f8bf1.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Make time for yourself. Branded appointments card with illustrative photography."
+  },
+  "/referral-program": {
+    "src": "/og/referral-0165045a9aba.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Share a little relaxation. Branded referral program card with illustrative photography."
+  },
+  "/blog": {
+    "src": "/og/blog-43cd4d4d1198.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: A little insight. A little self-care. Branded the journal card with illustrative photography."
+  },
+  "/privacy-policy": {
+    "src": "/og/privacy-b7220240513e.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Your privacy matters here. Branded privacy policy card with illustrative photography."
+  },
+  "/booking-policy": {
+    "src": "/og/booking-policy-7b646c6d1def.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: A clear plan for your appointment. Branded booking policy card with illustrative photography."
+  },
+  "/blog/swedish-vs-deep-tissue-massage": {
+    "src": "/og/blog-swedish-vs-deep-tissue-massage-ebc12ef2a0fb.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Choosing Between Swedish and Deep Tissue Massage Branded the journal · draft card with illustrative photography."
+  },
+  "/blog/what-to-expect-first-massage": {
+    "src": "/og/blog-what-to-expect-first-massage-0994107f80fc.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: What to Expect at Your First Massage Appointment Branded the journal · draft card with illustrative photography."
+  },
+  "/blog/preparing-first-eyebrow-appointment": {
+    "src": "/og/blog-preparing-first-eyebrow-appointment-099514cb5f06.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Preparing for Your First Eyebrow Appointment Branded the journal · draft card with illustrative photography."
+  },
+  "/blog/before-permanent-lip-colour": {
+    "src": "/og/blog-before-permanent-lip-colour-94503547b434.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: What to Know Before Permanent Lip Colour Branded the journal · draft card with illustrative photography."
+  },
+  "/blog/massage-and-beauty-cold-lake": {
+    "src": "/og/blog-massage-and-beauty-cold-lake-eb5cc5297191.png",
+    "width": 1200,
+    "height": 630,
+    "type": "image/png",
+    "alt": "Glow & Relax: Exploring Massage and Beauty Services in Cold Lake Branded the journal · draft card with illustrative photography."
+  }
+}
