@@ -59,3 +59,15 @@ Acceptance should cover: successful production build; PNGs and manifest availabl
 - Standard `vite preview` failed because the existing framework preview integration looks for `dist/server/server.js` while the build writes `.output`. Production verification instead used `production-check-server.mjs`, a local QA adapter invoking the actual compiled Cloudflare handler with a filesystem-backed public asset binding. This is not a deployed Cloudflare/browser/crawler test.
 
 The historical screenshots remain the original baseline; the new reports record this implementation's current checks separately.
+
+## Deployed image-origin correction
+
+The user reported an image-fetch failure in the deployed workers.dev preview. Direct HTTP inspection confirmed that the homepage declared `https://glowandrelax.ca/og/home-e7b1d7827db6.png`, which returned 404. The identical image path on the workers.dev deployment returned 200 with `image/png`.
+
+The original metadata tied image URLs to the production canonical origin. The checker then fetched the manifest path on its local test host, so the local pass did not verify the declared absolute image URL. Corrected both behaviors:
+
+- Resolve image URLs per request with TanStack Start's isomorphic function support, using the SSR request origin or browser origin. Keep production canonicals and `og:url` unchanged.
+- Fetch the actual absolute `og:image` URL in validation and check matching X and secure image URLs. Require the image host to match the deployment under test. Permit HTTP only for local QA.
+- Add regression tests for workers.dev, production, localhost, and consecutive requests with different origins.
+
+Verification: 14 tests pass, TypeScript and focused ESLint pass, production build succeeds, and all 16 routes / 17 cards pass the revised development and compiled-production checks. The compiled handler was also invoked with both HTTPS deployment origins and emitted the correct image host for each, with production canonicals preserved. No deployment was performed as part of this correction.

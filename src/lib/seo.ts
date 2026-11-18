@@ -1,5 +1,6 @@
 import { SITE } from "./site";
 import generatedImages from "./og-manifest.json";
+import { getSocialImageOrigin } from "./seo-origin";
 
 export interface SocialImage {
   src: string;
@@ -23,7 +24,7 @@ export function pageHead(opts: {
   const image = images[path] ?? images["global"];
   if (!image)
     throw new Error(`Missing generated social image for ${path}. Run the OG image export.`);
-  const imageUrl = new URL(image.src, SITE.url).href;
+  const imageUrl = new URL(image.src, getSocialImageOrigin()).href;
   const meta: Record<string, string>[] = [
     { title: opts.title },
     { name: "description", content: opts.description },

@@ -25,6 +25,7 @@ The card artwork is composed in code. Satori renders the layout to SVG and Sharp
 - `scripts/generate-og.tsx` owns the shared visual composition and static export. Follow the current website's typography and palette when changing it.
 - `src/lib/og-manifest.json` is generated. Do not edit it manually.
 - `src/lib/seo.ts` publishes the corresponding image descriptors through `pageHead()` and keeps self-canonicals on `https://glowandrelax.ca`.
+- `src/lib/seo-origin.ts` resolves image URLs against the current request origin during SSR and the browser origin during navigation. Preview deployments therefore reference their own exported PNGs. Canonical URLs and `og:url` continue to use the production domain.
 
 To replace a photograph, update its central source reference and the corresponding local copy used by the exporter. Keep the source and attribution record with the assets. Review the crop in the gallery. A photo is cropped to its panel without stretching; do not use stock photography as evidence of the actual studio or staff.
 
@@ -46,7 +47,7 @@ Use the port printed by the development server. To check production behavior aga
 bun run check:og --base-url http://localhost:3000 --production
 ```
 
-The checker fetches rendered HTML, not just source metadata. It verifies all route and blog coverage, unique titles/descriptions/cards, required OG/X fields, title and description targets, canonical URLs, alt text, manifest/file agreement, actual decoded PNG dimensions, HTTP image availability, draft noindex, sitemap coverage, and preview behavior. It writes `.scratch/opengraph-baseline/check-report.json` and exits unsuccessfully if checks fail.
+The checker fetches rendered HTML, not just source metadata. It verifies all route and blog coverage, unique titles/descriptions/cards, required OG/X fields, title and description targets, canonical URLs, alt text, manifest/file agreement, actual decoded PNG dimensions, HTTP image availability, draft noindex, sitemap coverage, and preview behavior. It fetches the exact absolute URL declared in `og:image`, including its hostname, and checks that it points to the deployment being tested. This prevents local assets from masking an unavailable image on another host. HTTPS is required except for local QA hosts. It writes `.scratch/opengraph-baseline/check-report.json` and exits unsuccessfully if checks fail.
 
 The baseline and original findings are in `.scratch/opengraph-baseline/baseline.md`. The inspector's unidentified ninth passing check is kept unconfirmed. The 60-character title, 125-character shared description, and inherited 2 MiB image guard are project targets rather than universal platform hard limits.
 

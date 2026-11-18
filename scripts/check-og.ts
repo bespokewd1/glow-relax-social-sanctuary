@@ -196,13 +196,21 @@ for (const card of OG_CARDS) {
       "Exactly one production self-canonical",
     );
     check(entry, meta("og:url") === canonical, "OG URL matches production self-canonical");
-    const imageUrl = new URL(image.src, SITE.url).href;
-    check(entry, imageUrl.startsWith("https://"), "Social image uses absolute HTTPS URL");
+    const expectedImageUrl = new URL(image.src, baseUrl).href;
+    const imageUrl = meta("og:image");
+    const parsedImageUrl = new URL(imageUrl);
+    const localHost = ["localhost", "127.0.0.1", "[::1]"].includes(parsedImageUrl.hostname);
     check(
       entry,
-      meta("og:image") === imageUrl && meta("twitter:image") === imageUrl,
-      "OG and X use this page's dedicated image URL",
+      parsedImageUrl.protocol === "https:" || (localHost && parsedImageUrl.protocol === "http:"),
+      "Social image uses absolute HTTPS URL, with HTTP allowed for local QA",
     );
+    check(
+      entry,
+      imageUrl === expectedImageUrl && meta("twitter:image") === imageUrl,
+      "OG and X use this deployment's dedicated image URL",
+    );
+    check(entry, meta("og:image:secure_url") === imageUrl, "OG secure image URL matches image URL");
     check(
       entry,
       meta("og:image:width") === "1200" && meta("og:image:height") === "630",
@@ -224,7 +232,9 @@ for (const card of OG_CARDS) {
       post?.draft ? /\bnoindex\b/i.test(robots) : !/\bnoindex\b/i.test(robots),
       post?.draft ? "Draft remains noindex" : "Public page is not accidentally noindex",
     );
-    const imageResponse = await fetchPage(image.src);
+    // Fetch the declared absolute URL, never replace its host with the test origin.
+    // A local file passing cannot hide an unreachable production-domain image.
+    const imageResponse = await fetchPage(imageUrl);
     check(entry, imageResponse.status === 200, "Image is served publicly over HTTP");
     check(
       entry,
