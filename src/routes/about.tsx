@@ -3,6 +3,7 @@ import { IMAGES, SITE } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 import { Section, CtaBand } from "@/components/site/blocks";
+import therapistPhoto from "@/assets/santiaga-patoy-rmt-photo.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -19,8 +20,16 @@ function About() {
   return (
     <>
       <Section className="pt-8 md:pt-12">
-        <div className="mx-auto max-w-3xl">
-          <div>
+        <div className="mx-auto max-w-4xl">
+          <div className="grid items-start gap-10 md:grid-cols-[260px_minmax(0,1fr)]">
+            <img
+              src={therapistPhoto.url}
+              alt="Santiaga Mullen-Patoy, Registered Massage Therapist (RMT) and owner of Glow & Relax in Cold Lake, Alberta"
+              className="mx-auto aspect-[3/4] w-full max-w-[260px] rounded-md object-cover shadow-sm md:mx-0"
+              width={600}
+              height={800}
+            />
+            <div>
             <h1 className="text-4xl md:text-5xl">About Me</h1>
             <p className="mt-4 font-display text-2xl">{SITE.therapist.name}, RMT</p>
             <p className="text-sm text-muted-foreground">{SITE.therapist.role} • {SITE.therapist.title}</p>
@@ -46,6 +55,7 @@ function About() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/massage-cold-lake" className="btn btn-primary">Massage</Link>
               <Link to="/brows-lashes-cold-lake" className="btn btn-outline">Beauty Services</Link>
+            </div>
             </div>
           </div>
         </div>
