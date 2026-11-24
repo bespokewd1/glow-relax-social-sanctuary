@@ -10,12 +10,12 @@ export const Route = createFileRoute("/massage-cold-lake")({
     pageHead({
       path: "/massage-cold-lake",
       title: "Massage Services in Cold Lake, AB | Glow & Relax",
-      description: "Explore relaxation, deep tissue, Swedish and more massage options at Glow & Relax inside Marina Mall, Cold Lake.",
+      description: "Explore relaxation, deep tissue, hot stone, prenatal, baby and cupping massage options at Glow & Relax inside Marina Mall, Cold Lake.",
     }),
   component: MassagePage,
 });
 
-const ALL_DURATIONS = [45, 60, 90, 120];
+const ALL_DURATIONS = [60, 90, 120];
 
 function MassagePage() {
   const open = isOpen("massage");
@@ -64,9 +64,9 @@ function MassagePage() {
           <SectionTitle eyebrow="FAQ" title="Massage Questions" />
           <Faq
             items={[
-              { q: "Which massage should I choose?", a: <>If you want to unwind, a relaxation or Swedish massage is a good starting point. If you prefer firmer, more focused pressure, ask about deep tissue. Not sure? <a className="underline" href={SITE.phoneHref}>Call us</a> and we'll talk it through. You can also read <Link className="underline" to="/blog/$slug" params={{ slug: "swedish-vs-deep-tissue-massage" }}>Swedish vs. deep tissue</Link>.</> },
+              { q: "Which massage should I choose?", a: <>If you want to unwind, a relaxation massage is a good starting point. If you prefer firmer, more focused pressure, ask about deep tissue. Not sure? <a className="underline" href={SITE.phoneHref}>Call us</a> and we'll talk it through.</> },
               { q: "What happens during my first appointment?", a: "We'll start with a short conversation about your preferences, comfort and any areas to focus on or avoid. You'll have privacy to get comfortable, and you can ask to adjust pressure at any time." },
-              { q: "How long are appointments?", a: "Deep tissue, relaxation, hot stone and prenatal massage are offered in 60, 90 and 120 minute lengths. Baby massage is 30 minutes, cupping massage is 60 or 90 minutes, and Swedish massage is 45, 60, 90 or 120 minutes. We'll confirm availability when you book." },
+              { q: "How long are appointments?", a: "Deep tissue, relaxation, hot stone and prenatal massage are offered in 60, 90 and 120 minute lengths. Baby massage is 30 minutes, and cupping massage is 60 or 90 minutes. We'll confirm availability when you book." },
               { q: "Do you offer prenatal massage?", a: "Prenatal massage is listed as a service, subject to suitability and therapist qualifications. Please call to discuss before booking." },
               { q: "Where is Glow & Relax located?", a: `Inside Marina Mall Shopping Mall, ${SITE.address.street}, ${SITE.address.city}, ${SITE.address.region} ${SITE.address.postal}.` },
               { q: "How do I book?", a: <>Call <a className="underline" href={SITE.phoneHref}>{SITE.phoneDisplay}</a>. Online booking is coming soon. Massage appointments are available from {OPENING_DATE_LABEL}.</> },

@@ -28,9 +28,8 @@ test("prenatal massage offers 60, 90 and 120 minutes", () => {
   expect(bySlug("prenatal")).toEqual([60, 90, 120]);
 });
 
-test("Swedish durations remain unchanged", () => {
-  expect(bySlug("swedish")).toEqual([45, 60, 90, 120]);
-  expect(_MS.find((s) => s.slug === "swedish")?.prices).toBeUndefined();
+test("Swedish massage is removed because it is not on the approved price list", () => {
+  expect(_MS.find((s) => s.slug === "swedish")).toBeUndefined();
 });
 
 it.each([

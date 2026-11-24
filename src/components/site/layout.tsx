@@ -173,7 +173,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="container-site mt-12 border-t border-ink-foreground/15 pt-6 text-xs leading-relaxed opacity-70">
-        <p><strong>Glow &amp; Relax</strong> — registered massage therapy (RMT), relaxation, deep tissue, Swedish, prenatal, hot stone and cupping massage, plus brows, lashes and permanent lip colour in Cold Lake, Alberta. Conveniently located inside Marina Mall, serving Cold Lake, 4 Wing Cold Lake, Grand Centre, Bonnyville and the Lakeland region.</p>
+        <p><strong>Glow &amp; Relax</strong> — registered massage therapy (RMT), relaxation, deep tissue, prenatal, hot stone and cupping massage, plus brows, lashes and permanent lip colour in Cold Lake, Alberta. Conveniently located inside Marina Mall, serving Cold Lake, 4 Wing Cold Lake, Grand Centre, Bonnyville and the Lakeland region.</p>
       </div>
       <div className="container-site mt-6 border-t border-ink-foreground/15 pt-6 text-xs opacity-70">
         © {new Date().getFullYear()} Glow &amp; Relax, Cold Lake, Alberta. Digital Marketing by Bespoke Web Design.
