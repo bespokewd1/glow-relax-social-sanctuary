@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader, SiteFooter, MobileActionBar } from "@/components/site/layout";
+import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 import { SITE, SITE_ASSETS, MASSAGE_SERVICES } from "@/lib/site";
 
 function NotFoundComponent() {
@@ -143,6 +144,7 @@ function RootComponent() {
       </main>
       <SiteFooter />
       <MobileActionBar />
+      <WhatsAppFloat />
     </>
   );
 }

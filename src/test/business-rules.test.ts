@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { SITE, openingNotice, isOpen } from "@/lib/site";
+import { SITE, openingNotice, isOpen, whatsappUrl } from "@/lib/site";
 
 describe("business rules", () => {
   it("phone links dial +18257340539", () => expect(SITE.phoneHref).toBe("tel:+18257340539"));
@@ -64,4 +64,17 @@ test("therapist is Santiaga Mullen-Patoy, RMT and owner", () => {
   expect(SITE.therapist.role).toBe("Owner");
   expect(SITE.therapist.title).toContain("Registered Massage Therapist");
   expect(SITE.therapist.mission).toContain("personalized massage therapy");
+});
+
+test("WhatsApp uses 780-710-0539 with the approved booking prefill", () => {
+  expect(SITE.whatsapp.display).toBe("780-710-0539");
+  expect(whatsappUrl).toBe(
+    "https://wa.me/17807100539?text=Hello%20Glow%20%26%20Relax%20Massage!%20I%20would%20like%20to%20inquire%20about%20your%20massage%20services%20and%20book%20an%20appointment.",
+  );
+});
+
+test("direct billing info directs insurance questions to Santiaga", () => {
+  expect(SITE.directBilling.heading).toBe("Direct Billing Available!");
+  expect(SITE.directBilling.text).toContain("eligible insurance providers");
+  expect(SITE.directBilling.note).toContain("Santiaga");
 });

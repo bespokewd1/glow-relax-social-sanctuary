@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { MASSAGE_SERVICES, IMAGES, PRICING_LABEL, SITE, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
-import { PageHeader, Section, SectionTitle, CallBookButtons, Faq, CtaBand } from "@/components/site/blocks";
+import { PageHeader, Section, SectionTitle, CallBookButtons, Faq } from "@/components/site/blocks";
+import { DirectBillingSection, WhatsAppBookingSection } from "@/components/site/sections";
 
 export const Route = createFileRoute("/massage-cold-lake")({
   head: () =>
@@ -73,7 +74,8 @@ function MassagePage() {
           />
         </div>
       </Section>
-      <CtaBand />
+      <DirectBillingSection />
+      <WhatsAppBookingSection />
     </>
   );
 }

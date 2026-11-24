@@ -7,6 +7,16 @@ export const SITE = {
   url: "https://glowandrelax.ca",
   phoneDisplay: "1-825-734-0539",
   phoneHref: "tel:+18257340539",
+  whatsapp: {
+    display: "780-710-0539",
+    digits: "17807100539",
+    prefill: "Hello Glow & Relax Massage! I would like to inquire about your massage services and book an appointment.",
+  },
+  directBilling: {
+    heading: "Direct Billing Available!",
+    text: "We offer direct billing for eligible insurance providers. Please contact us to confirm your coverage and eligibility.",
+    note: "For direct billing inquiries, please ask Santiaga.",
+  },
   email: null as string | null, // add when confirmed
   address: {
     venue: "Marina Mall Shopping Mall",
@@ -71,6 +81,7 @@ export function openingNotice(now: Date = new Date()): string | null {
 
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.mapQuery)}`;
 export const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}&output=embed`;
+export const whatsappUrl = `https://wa.me/${SITE.whatsapp.digits}?text=${encodeURIComponent(SITE.whatsapp.prefill)}`;
 
 export const fullAddress = `${SITE.address.street}, ${SITE.address.city}, ${SITE.address.region} ${SITE.address.postal}`;
 

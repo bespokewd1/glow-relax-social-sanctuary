@@ -4,7 +4,8 @@ import { SITE, IMAGES, openingNotice } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 import { BookButton } from "@/components/site/book-button";
-import { Section, SectionTitle, CtaBand, VisitUs, ReviewsSection } from "@/components/site/blocks";
+import { Section, SectionTitle, VisitUs, ReviewsSection } from "@/components/site/blocks";
+import { DirectBillingSection, WhatsAppBookingSection, FollowUsSection } from "@/components/site/sections";
 
 const HERO_SRCSET = [480, 768, 1080, 1400]
   .map((w) => `${IMAGES.hero.replace(/w=\d+/, `w=${w}`).replace("q=70", "q=60")} ${w}w`)
@@ -188,7 +189,9 @@ function Home() {
 
       <Section className="bg-card"><ReviewsSection /></Section>
       <Section><VisitUs /></Section>
-      <CtaBand />
+      <DirectBillingSection />
+      <WhatsAppBookingSection />
+      <FollowUsSection />
     </>
   );
 }

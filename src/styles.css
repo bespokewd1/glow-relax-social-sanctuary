@@ -61,6 +61,8 @@
   --color-taupe: var(--taupe);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
 }
 
 :root {
@@ -95,6 +97,8 @@
   --border: oklch(0.86 0.02 70);
   --input: oklch(0.82 0.02 70);
   --ring: oklch(0.36 0.04 135);
+  --whatsapp: oklch(0.55 0.14 148);
+  --whatsapp-foreground: oklch(0.985 0.006 80);
 }
 
 @layer base {
@@ -193,6 +197,14 @@
   color: var(--color-foreground);
   &:hover {
     background: var(--color-secondary);
+  }
+}
+
+@utility btn-whatsapp {
+  background: var(--color-whatsapp);
+  color: var(--color-whatsapp-foreground);
+  &:hover {
+    background: var(--color-primary);
   }
 }
 

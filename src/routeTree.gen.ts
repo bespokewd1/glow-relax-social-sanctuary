@@ -17,6 +17,7 @@ import { Route as BrowsLashesColdLakeRouteImport } from './routes/brows-lashes-c
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as MassageColdLakeRouteImport } from './routes/massage-cold-lake'
 import { Route as PermanentLipColourColdLakeRouteImport } from './routes/permanent-lip-colour-cold-lake'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ReferralProgramRouteImport } from './routes/referral-program'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -64,6 +65,11 @@ const PermanentLipColourColdLakeRoute =
     path: '/permanent-lip-colour-cold-lake',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
@@ -99,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/massage-cold-lake': typeof MassageColdLakeRoute
   '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
+  '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/referral-program': typeof ReferralProgramRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -114,6 +121,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/massage-cold-lake': typeof MassageColdLakeRoute
   '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
+  '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/referral-program': typeof ReferralProgramRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -130,6 +138,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/massage-cold-lake': typeof MassageColdLakeRoute
   '/permanent-lip-colour-cold-lake': typeof PermanentLipColourColdLakeRoute
+  '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/referral-program': typeof ReferralProgramRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -147,6 +156,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/massage-cold-lake'
     | '/permanent-lip-colour-cold-lake'
+    | '/pricing'
     | '/privacy-policy'
     | '/referral-program'
     | '/blog/$slug'
@@ -162,6 +172,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/massage-cold-lake'
     | '/permanent-lip-colour-cold-lake'
+    | '/pricing'
     | '/privacy-policy'
     | '/referral-program'
     | '/blog/$slug'
@@ -177,6 +188,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/massage-cold-lake'
     | '/permanent-lip-colour-cold-lake'
+    | '/pricing'
     | '/privacy-policy'
     | '/referral-program'
     | '/blog/$slug'
@@ -193,6 +205,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   MassageColdLakeRoute: typeof MassageColdLakeRoute
   PermanentLipColourColdLakeRoute: typeof PermanentLipColourColdLakeRoute
+  PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ReferralProgramRoute: typeof ReferralProgramRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -258,6 +271,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PermanentLipColourColdLakeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy-policy': {
       id: '/privacy-policy'
       path: '/privacy-policy'
@@ -305,6 +325,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   MassageColdLakeRoute: MassageColdLakeRoute,
   PermanentLipColourColdLakeRoute: PermanentLipColourColdLakeRoute,
+  PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ReferralProgramRoute: ReferralProgramRoute,
   BlogSlugRoute: BlogSlugRoute,

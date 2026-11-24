@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, Phone, X, Facebook, CalendarDays } from "lucide-react";
-import { SITE, SITE_ASSETS, openingNotice } from "@/lib/site";
+import { SITE, SITE_ASSETS, openingNotice, whatsappUrl } from "@/lib/site";
 import { BookButton } from "./book-button";
+import { WhatsAppIcon } from "./whatsapp-float";
 import { Button } from "@/components/ui/button";
 
 const NAV = [
@@ -10,6 +11,7 @@ const NAV = [
   { to: "/massage-cold-lake", label: "Massage" },
   { to: "/brows-lashes-cold-lake", label: "Brows & Lashes" },
   { to: "/permanent-lip-colour-cold-lake", label: "Permanent Lips" },
+  { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -23,20 +25,20 @@ export function SiteHeader() {
         <div className="bg-ink py-2 text-center text-xs tracking-wide text-ink-foreground">{notice}</div>
       )}
       <div className="container-site flex h-24 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex shrink-0 items-center gap-3">
           <img src={SITE_ASSETS.logo.src} srcSet={SITE_ASSETS.logo.srcSet} sizes="(min-width: 768px) 80px, 72px" alt={`${SITE.name} home`} width={SITE_ASSETS.logo.width} height={SITE_ASSETS.logo.height} className="h-auto w-[4.5rem] shrink-0 object-contain md:w-20" />
-          <span className="hidden font-display text-xl leading-none sm:block">
+          <span className="hidden shrink-0 whitespace-nowrap font-display text-xl leading-none sm:block lg:hidden xl:block">
             Glow &amp; Relax
             <span className="mt-1 block font-sans text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">Cold Lake, Alberta</span>
           </span>
         </Link>
         <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-6 text-sm">
+          <ul className="flex items-center gap-4 text-sm xl:gap-6">
             {NAV.map((n) => (
               <li key={n.to}>
                 <Link
                   to={n.to}
-                  className="py-2 text-foreground/80 transition-colors hover:text-primary"
+                  className="whitespace-nowrap py-2 text-foreground/80 transition-colors hover:text-primary"
                   activeProps={{ className: "text-primary underline underline-offset-8" }}
                   activeOptions={{ exact: true }}
                 >
@@ -44,13 +46,23 @@ export function SiteHeader() {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-whatsapp/12 px-3 py-1.5 text-sm font-semibold text-primary transition-colors hover:bg-whatsapp hover:text-whatsapp-foreground"
+              >
+                <WhatsAppIcon className="h-4 w-4 shrink-0 text-whatsapp transition-colors group-hover:text-whatsapp-foreground" /> WhatsApp
+              </a>
+            </li>
           </ul>
         </nav>
-        <div className="flex items-center gap-3">
-          <a href={SITE.phoneHref} className="hidden items-center gap-2 text-sm font-semibold md:flex">
+        <div className="flex items-center gap-2.5">
+          <a href={SITE.phoneHref} className="hidden items-center gap-1.5 whitespace-nowrap text-sm font-semibold md:flex lg:hidden">
             <Phone className="h-4 w-4 text-blush" aria-hidden /> {SITE.phoneDisplay}
           </a>
-          <BookButton className="btn btn-primary hidden !min-h-11 !px-4 sm:inline-flex" />
+          <BookButton className="btn btn-primary hidden whitespace-nowrap !min-h-11 !px-4 sm:inline-flex" />
           <button
             className="inline-flex h-11 w-11 items-center justify-center lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -71,7 +83,10 @@ export function SiteHeader() {
                 </Link>
               </li>
             ))}
-            <li className="pt-4">
+            <li className="flex flex-col gap-3 pt-4">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn btn-whatsapp w-full">
+                <WhatsAppIcon className="h-4 w-4 shrink-0" /> Message Us on WhatsApp
+              </a>
               <BookButton className="btn btn-primary w-full" />
             </li>
           </ul>
@@ -126,6 +141,7 @@ export function SiteFooter() {
           </ul>
           <h2 className="eyebrow mt-8 !text-sand">Links</h2>
           <ul className="mt-4 space-y-2 text-sm">
+            <li><Link to="/pricing" className="hover:underline">Pricing</Link></li>
             <li><Link to="/about" className="hover:underline">About</Link></li>
             <li><Link to="/book" className="hover:underline">Book Appointment</Link></li>
             <li><Link to="/blog" className="hover:underline">Blog</Link></li>
@@ -146,6 +162,9 @@ export function SiteFooter() {
         <div>
           <h2 className="eyebrow !text-sand">Phone</h2>
           <a href={SITE.phoneHref} className="mt-4 block text-lg font-semibold">{SITE.phoneDisplay}</a>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1.5 text-sm opacity-85 hover:underline">
+            <WhatsAppIcon className="h-4 w-4 shrink-0" /> WhatsApp: {SITE.whatsapp.display}
+          </a>
           <h2 className="eyebrow mt-8 !text-sand">Policies</h2>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
