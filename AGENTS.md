@@ -13,3 +13,4 @@
 - All business facts (phone, address, hours, services, images, booking URL, social, referral, openings) live in `src/lib/site.ts`; pages read from it so edits happen in one place.
 - Blog posts live in `src/lib/blog.ts`; drafts render with noindex until reviewed.
 - Per-page SEO via `pageHead()` in `src/lib/seo.ts` (self-canonical on glowandrelax.ca).
+- Store approved massage prices alongside each service and shared PMU pricing in the central business configuration; pages consume these values to prevent conflicting prices.

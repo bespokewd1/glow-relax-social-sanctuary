@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, Phone, X, Facebook, CalendarDays } from "lucide-react";
 import { SITE, SITE_ASSETS, openingNotice } from "@/lib/site";
 import { BookButton } from "./book-button";
+import { Button } from "@/components/ui/button";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -105,9 +106,15 @@ export function SiteFooter() {
             Offering massage, brow, lash and permanent lip-colour services in a welcoming studio inside Marina Mall, Cold Lake.
           </p>
           {SITE.social.facebook && (
-            <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm underline-offset-4 hover:underline">
-              <Facebook className="h-5 w-5" aria-hidden /> Follow us on Facebook
-            </a>
+            <div className="mt-6 max-w-sm">
+              <h2 className="font-display text-2xl">Stay Connected with Glow &amp; Relax!</h2>
+              <p className="mt-3 text-sm leading-relaxed opacity-80">Follow us on Facebook for the latest news, special promotions, service updates, announcements, and upcoming offers.</p>
+              <Button asChild variant="ghost" className="btn btn-light mt-4 gap-2 text-sm">
+                <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer">
+                  <Facebook className="h-5 w-5 shrink-0" aria-hidden /> Follow Us on Facebook
+                </a>
+              </Button>
+            </div>
           )}
         </div>
         <div>

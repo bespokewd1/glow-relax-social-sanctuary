@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { IMAGES, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
+import { IMAGES, PMU, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { PageHeader, Section, Placeholder, CallBookButtons, Faq, CtaBand } from "@/components/site/blocks";
 
@@ -41,6 +41,13 @@ function LipsPage() {
           <div>
             <h2 className="text-3xl md:text-4xl">What to Know</h2>
             <p className="mt-4 text-muted-foreground">Procedure-specific details are being finalized and will be confirmed by your technician.</p>
+            <div className="mt-6">
+              <h3 className="text-xl">{PMU.name}</h3>
+              <ul className="mt-2 space-y-1 text-muted-foreground">
+                {PMU.services.map((service) => <li key={service}>{service}</li>)}
+              </ul>
+              <p className="mt-3 text-sm font-semibold text-blush-foreground">PMU Package/Service Price: ${PMU.price}</p>
+            </div>
             <div className="mt-8"><CallBookButtons /></div>
           </div>
           <ol className="space-y-8">
@@ -64,7 +71,7 @@ function LipsPage() {
               { q: "Do I need a consultation first?", a: "Yes — a consultation is the first step, so we can discuss your goals and suitability." },
               { q: "How long does it last?", a: <Placeholder>Longevity information will be confirmed by the technician.</Placeholder> },
               { q: "What does healing look like?", a: <Placeholder>Healing details will be shared during your consultation.</Placeholder> },
-              { q: "How much does it cost?", a: "Please contact us for pricing." },
+              { q: "How much does it cost?", a: `PMU Package/Service Price: $${PMU.price}.` },
               { q: "Where can I read more?", a: <>See our article <Link className="underline" to="/blog/$slug" params={{ slug: "before-permanent-lip-colour" }}>What to Know Before Permanent Lip Colour</Link>.</> },
             ]}
           />

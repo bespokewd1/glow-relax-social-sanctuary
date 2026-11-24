@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { IMAGES, PRICING_LABEL, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
+import { IMAGES, PMU, PRICING_LABEL, isOpen, OPENING_DATE_LABEL } from "@/lib/site";
 import { pageHead } from "@/lib/seo";
 import { IMAGE_SIZES, responsiveImage } from "@/lib/images";
 import { PageHeader, Section, Placeholder, CallBookButtons, CtaBand } from "@/components/site/blocks";
@@ -36,6 +36,14 @@ function ServiceGroup({ title, intro, items, img, alt }: { title: string; intro:
                 <p className="text-sm text-blush-foreground">{PRICING_LABEL}</p>
               </div>
             ))
+          ) : title === "Eyebrow Services" ? (
+            <div>
+              <h3 className="text-xl">{PMU.name}</h3>
+              <ul className="mt-2 space-y-1 text-muted-foreground">
+                {PMU.services.map((service) => <li key={service}>{service}</li>)}
+              </ul>
+              <p className="mt-3 text-sm font-semibold text-blush-foreground">PMU Package/Service Price: ${PMU.price}</p>
+            </div>
           ) : (
             <Placeholder>The full list of treatments, durations and pricing will be posted here shortly. Call us to ask what's available.</Placeholder>
           )}

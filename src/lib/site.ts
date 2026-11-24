@@ -80,8 +80,9 @@ export interface MassageService {
   slug: string;
   name: string;
   description: string;
-  /** Confirm with owner — only listed durations are shown. */
+  /** Owner-approved appointment lengths and prices. */
   durations: Duration[];
+  prices?: { duration: Duration; amount: number }[];
   image: string;
 }
 
@@ -112,13 +113,19 @@ export const OG_ASSETS = {
 };
 
 export const MASSAGE_SERVICES: MassageService[] = [
-  { slug: "deep-tissue", name: "Deep Tissue Massage", description: "More focused massage techniques using firmer pressure when appropriate.", durations: [45, 60, 90, 120], image: IMAGES.deepTissue },
-  { slug: "relaxation", name: "Relaxation Massage", description: "Gentle massage designed for comfort and relaxation.", durations: [45, 60, 90, 120], image: IMAGES.massage },
+  { slug: "deep-tissue", name: "Deep Tissue Massage", description: "More focused massage techniques using firmer pressure when appropriate.", durations: [60, 90, 120], prices: [{ duration: 60, amount: 120 }, { duration: 90, amount: 150 }, { duration: 120, amount: 200 }], image: IMAGES.deepTissue },
+  { slug: "relaxation", name: "Relaxation Massage", description: "Gentle massage designed for comfort and relaxation.", durations: [60, 90, 120], prices: [{ duration: 60, amount: 105 }, { duration: 90, amount: 150 }, { duration: 120, amount: 200 }], image: IMAGES.massage },
   { slug: "swedish", name: "Swedish Massage", description: "Traditional massage featuring flowing massage strokes.", durations: [45, 60, 90, 120], image: IMAGES.oil },
-  { slug: "prenatal", name: "Prenatal Massage", description: "Massage tailored to pregnancy, subject to suitability and therapist qualifications.", durations: [60], image: IMAGES.towels },
-  { slug: "baby", name: "Baby Massage", description: "Specialized infant massage service — exact format and eligibility to be confirmed.", durations: [30], image: IMAGES.stillLife },
-  { slug: "hot-stone", name: "Hot Stone Massage", description: "Massage incorporating warmed stones.", durations: [45, 60, 90, 120], image: IMAGES.hotStone },
-  { slug: "cupping", name: "Cupping Massage", description: "Treatment incorporating cupping techniques.", durations: [45, 60, 90, 120], image: IMAGES.candle },
+  { slug: "prenatal", name: "Prenatal Massage", description: "Massage tailored to pregnancy, subject to suitability and therapist qualifications.", durations: [60, 90, 120], prices: [{ duration: 60, amount: 120 }, { duration: 90, amount: 160 }, { duration: 120, amount: 240 }], image: IMAGES.towels },
+  { slug: "baby", name: "Baby Massage (5 Years & Under)", description: "Specialized massage for children 5 years and under.", durations: [30], prices: [{ duration: 30, amount: 75 }], image: IMAGES.stillLife },
+  { slug: "hot-stone", name: "Hot Stone Massage", description: "Massage incorporating warmed stones.", durations: [60, 90, 120], prices: [{ duration: 60, amount: 130 }, { duration: 90, amount: 175 }, { duration: 120, amount: 245 }], image: IMAGES.hotStone },
+  { slug: "cupping", name: "Cupping Massage", description: "Treatment incorporating cupping techniques.", durations: [60, 90], prices: [{ duration: 60, amount: 110 }, { duration: 90, amount: 150 }], image: IMAGES.candle },
 ];
+
+export const PMU = {
+  name: "Permanent Makeup (PMU)",
+  services: ["Ombre / Powder Brows", "Eyeliner / Shadow", "Lip Blush"],
+  price: 300,
+};
 
 export const PRICING_LABEL = "Contact us for pricing";

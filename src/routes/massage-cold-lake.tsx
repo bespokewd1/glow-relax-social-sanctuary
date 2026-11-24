@@ -34,7 +34,7 @@ function MassagePage() {
       />
       <Section>
         <SectionTitle eyebrow="Treatments" title="Our Massage Options">
-          Appointments are offered in {ALL_DURATIONS.join(", ")} minute lengths. Baby massage is a 30-minute session and prenatal massage is 60 minutes. We'll confirm what's right for you when you book.
+          Appointments are offered in {ALL_DURATIONS.join(", ")} minute lengths, depending on the treatment. Baby massage is a 30-minute session, prenatal massage is offered in 60, 90 and 120 minutes, and cupping massage in 60 and 90 minutes. We'll confirm what's right for you when you book.
         </SectionTitle>
         <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {MASSAGE_SERVICES.map((s) => (
@@ -46,7 +46,13 @@ function MassagePage() {
                 <span className="font-semibold">Durations:</span>{" "}
                 {s.durations.length ? s.durations.map((d) => `${d} min`).join(" · ") : "to be confirmed"}
               </p>
-              <p className="mt-1 text-sm text-blush-foreground">{PRICING_LABEL}</p>
+              {s.prices ? (
+                <ul className="mt-2 space-y-1 text-sm text-blush-foreground" aria-label={`${s.name} prices`}>
+                  {s.prices.map((price) => (
+                    <li key={price.duration}>{price.duration} minutes – ${price.amount}</li>
+                  ))}
+                </ul>
+              ) : <p className="mt-1 text-sm text-blush-foreground">{PRICING_LABEL}</p>}
             </article>
           ))}
         </div>
@@ -59,7 +65,7 @@ function MassagePage() {
             items={[
               { q: "Which massage should I choose?", a: <>If you want to unwind, a relaxation or Swedish massage is a good starting point. If you prefer firmer, more focused pressure, ask about deep tissue. Not sure? <a className="underline" href={SITE.phoneHref}>Call us</a> and we'll talk it through. You can also read <Link className="underline" to="/blog/$slug" params={{ slug: "swedish-vs-deep-tissue-massage" }}>Swedish vs. deep tissue</Link>.</> },
               { q: "What happens during my first appointment?", a: "We'll start with a short conversation about your preferences, comfort and any areas to focus on or avoid. You'll have privacy to get comfortable, and you can ask to adjust pressure at any time." },
-              { q: "How long are appointments?", a: "Most treatments are offered in 45, 60, 90 and 120 minute lengths. Baby massage is 30 minutes and prenatal massage is 60 minutes. We'll confirm availability when you book." },
+              { q: "How long are appointments?", a: "Deep tissue, relaxation, hot stone and prenatal massage are offered in 60, 90 and 120 minute lengths. Baby massage is 30 minutes, cupping massage is 60 or 90 minutes, and Swedish massage is 45, 60, 90 or 120 minutes. We'll confirm availability when you book." },
               { q: "Do you offer prenatal massage?", a: "Prenatal massage is listed as a service, subject to suitability and therapist qualifications. Please call to discuss before booking." },
               { q: "Where is Glow & Relax located?", a: `Inside Marina Mall Shopping Mall, ${SITE.address.street}, ${SITE.address.city}, ${SITE.address.region} ${SITE.address.postal}.` },
               { q: "How do I book?", a: <>Call <a className="underline" href={SITE.phoneHref}>{SITE.phoneDisplay}</a>. Online booking is coming soon. Massage appointments are available from {OPENING_DATE_LABEL}.</> },
